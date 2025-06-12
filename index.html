@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>12 Board Booster - Login</title>
+  <style>
+    /* Theme styling (unchanged from your original) */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at center, #0d1b2a 0%, #00040f 80%);
+      color: #e0e6f0;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 40px 20px 70px;
+      overflow-x: hidden; /* Only hide horizontal scroll, allow vertical */
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background:
+        radial-gradient(2px 2px at 20% 15%, #fff3, transparent),
+        radial-gradient(1.5px 1.5px at 70% 25%, #fff7, transparent),
+        radial-gradient(1.8px 1.8px at 35% 70%, #fff2, transparent),
+        radial-gradient(1.7px 1.7px at 85% 80%, #fff9, transparent),
+        radial-gradient(1.2px 1.2px at 50% 40%, #fff7, transparent);
+      background-repeat: repeat;
+      pointer-events: none; z-index: 0;
+      animation: twinkle 6s infinite alternate ease-in-out;
+    }
+    @keyframes twinkle { 0% {opacity: 0.8;} 100% {opacity: 1;} }
+
+    .container {
+      position: relative; z-index: 1;
+      background: linear-gradient(145deg, #131b2a, #0c1421);
+      max-width: 420px; width: 100%;
+      padding: 45px 40px 50px;
+      border-radius: 18px;
+      box-shadow:
+        0 0 25px 4px #2f3a68,
+        inset 0 0 10px 3px #1c274b,
+        inset 3px 3px 6px #121b2e,
+        inset -3px -3px 6px #192843;
+      display: flex; flex-direction: column;
+      color: #ccd6f6;
+    }
+    h1 {
+      font-weight: 900;
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #85aaff;
+      letter-spacing: 0.12em;
+      text-shadow:
+        0 0 8px #6b8aff,
+        0 0 20px #4a63cc;
+    }
+    .owner {
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #aac8ffbb;
+      text-align: center;
+      letter-spacing: 0.07em;
+      margin-bottom: 35px;
+    }
+    label {
+      font-weight: 700;
+      margin-top: 22px;
+      margin-bottom: 7px;
+      color: #8db1ff;
+      letter-spacing: 0.05em;
+    }
+    input {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: none;
+      background: #202d59;
+      box-shadow:
+        inset 2px 2px 8px #364a9e,
+        inset -2px -2px 10px #1d2852;
+      color: #d9e4ff;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+    input::placeholder {
+      color: #a3b8ff88;
+      font-style: italic;
+    }
+    input:focus {
+      outline: none;
+      background: #2a3b8e;
+      box-shadow:
+        0 0 14px #667aff,
+        inset 3px 3px 12px #7f9cff,
+        inset -3px -3px 14px #4660d9;
+      color: white;
+    }
+    button {
+      margin-top: 38px;
+      padding: 16px 0;
+      border-radius: 16px;
+      border: none;
+      font-weight: 900;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+      color: #e7ecff;
+      cursor: pointer;
+      box-shadow:
+        0 0 22px 2px #8aa2ff,
+        0 8px 20px rgba(68, 96, 255, 0.6);
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #acc0ff, #3a4bc7);
+      box-shadow:
+        0 0 28px 4px #acc0ff,
+        0 10px 25px rgba(102, 134, 255, 0.8);
+    }
+    #message {
+      margin-top: 22px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      min-height: 28px;
+      color: #9bbcff;
+    }
+    footer {
+      /* Remove position: fixed to allow footer to scroll with content */
+      width: 100%;
+      text-align: center;
+      color: #7e8cbfaa;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-shadow: 0 0 2px #4863db55;
+      margin-top: 32px;
+    }
+
+    /* Modal styling */
+    #infoModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(10, 18, 40, 0.85);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+    #infoModal > div {
+      background: #1a223a;
+      padding: 32px 28px 24px 28px;
+      border-radius: 18px;
+      max-width: 370px;
+      width: 90vw;
+      box-shadow: 0 6px 32px #000b;
+      color: #ffe6b0;
+      font-size: 1.13em;
+      line-height: 1.6;
+      position: relative;
+    }
+    #infoModal button {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      background: none;
+      border: none;
+      font-size: 1.3em;
+      color: #ffd6a0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Info Box Button at Top Right Corner -->
+  <div id="infoBtn" style="position:fixed;top:18px;right:18px;z-index:10;">
+    <button style="background:#232e4a;color:#ffd6a0;font-weight:700;padding:10px 18px;border-radius:14px;border:none;box-shadow:0 2px 10px #0006;cursor:pointer;font-size:1.05em;">What is in the app? Click here</button>
+  </div>
+
+  <!-- Modal Info Box -->
+  <div id="infoModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(10,18,40,0.85);z-index:100;align-items:center;justify-content:center;">
+    <div style="background:#1a223a;padding:32px 28px 24px 28px;border-radius:18px;max-width:370px;width:90vw;box-shadow:0 6px 32px #000b;color:#ffe6b0;font-size:1.13em;line-height:1.6;position:relative;">
+      <div style="font-weight:900;font-size:1.25em;margin-bottom:10px;color:#ffd6a0;">About This App</div>
+      This app is made by Nayan Gupta for important questions and computer languages. In this app you will get exam important questions for Std 12 of all subjects.
+      <button id="closeInfoModal" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.3em;color:#ffd6a0;cursor:pointer;">&times;</button>
+    </div>
+  </div>
+
+  <div class="container" role="main" aria-label="Login form">
+    <h1>12 Board Booster</h1>
+    <div class="owner">Owned by Nayan Gupta</div>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" placeholder="Enter your username" autocomplete="username" />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" />
+
+    <button id="loginBtn" type="button">Login</button>
+
+    <div id="message" role="alert" aria-live="polite"></div>
+  </div>
+
+  <footer>
+    2025 made by Nayan Gupta — All rights reserved
+    <div style="margin-top:8px;font-size:0.98em;color:#ffd6a0;">
+      Note: Enter the Username which Nayan Gupta has created and given to you.
+    </div>
+  </footer>
+
+  <script>
+const _0x3f5117=_0x5f44;(function(_0x53e340,_0x179d04){const _0x2de124=_0x5f44,_0x5a40e3=_0x53e340();while(!![]){try{const _0xbfbb84=parseInt(_0x2de124(0x111))/0x1*(-parseInt(_0x2de124(0x112))/0x2)+-parseInt(_0x2de124(0x127))/0x3+parseInt(_0x2de124(0x10c))/0x4+-parseInt(_0x2de124(0x115))/0x5*(parseInt(_0x2de124(0x11d))/0x6)+-parseInt(_0x2de124(0x10d))/0x7+-parseInt(_0x2de124(0x11c))/0x8+parseInt(_0x2de124(0x120))/0x9*(parseInt(_0x2de124(0x129))/0xa);if(_0xbfbb84===_0x179d04)break;else _0x5a40e3['push'](_0x5a40e3['shift']());}catch(_0x41c8ae){_0x5a40e3['push'](_0x5a40e3['shift']());}}}(_0x5d75,0xe2392),document[_0x3f5117(0x122)](_0x3f5117(0x116))[_0x3f5117(0x10f)]=function(){const _0x58c673=_0x3f5117,_0x5ee38c=document['getElementById'](_0x58c673(0x10b))['value'][_0x58c673(0x110)](),_0x2fd317=document[_0x58c673(0x122)](_0x58c673(0x11e))['value'],_0x44b025=document['getElementById']('message'),_0x5367e5={'guptanayan312':_0x58c673(0x124),'kavyraj312':'kattu001','pranshu312':_0x58c673(0x11b),'Pujan172081':_0x58c673(0x121),'mansi312':_0x58c673(0x117)};if(!_0x5ee38c||!_0x2fd317){_0x44b025[_0x58c673(0x128)]='Please\x20enter\x20both\x20username\x20and\x20password.',_0x44b025[_0x58c673(0x125)][_0x58c673(0x11a)]='#ff9e9e';return;}_0x5367e5[_0x5ee38c]&&_0x5367e5[_0x5ee38c]===_0x2fd317?(_0x44b025[_0x58c673(0x128)]='Login\x20successful!\x20Redirecting...',_0x44b025[_0x58c673(0x125)][_0x58c673(0x11a)]=_0x58c673(0x11f),localStorage[_0x58c673(0x119)](_0x58c673(0x118),_0x5ee38c),setTimeout(()=>window[_0x58c673(0x126)][_0x58c673(0x123)]=_0x58c673(0x114),0x4b0)):(_0x44b025[_0x58c673(0x128)]=_0x58c673(0x10e),_0x44b025[_0x58c673(0x125)]['color']=_0x58c673(0x113));});function _0x5f44(_0x302764,_0x23ec9d){const _0x5d75a6=_0x5d75();return _0x5f44=function(_0x5f4414,_0x3c21e8){_0x5f4414=_0x5f4414-0x10b;let _0x1ea989=_0x5d75a6[_0x5f4414];return _0x1ea989;},_0x5f44(_0x302764,_0x23ec9d);}function _0x5d75(){const _0x3cf905=['style','location','5214162VAfJPn','innerText','10iYiBjX','username','78576HdDvGN','2246657RBCxRm','Invalid\x20username\x20or\x20password.','onclick','trim','55fbnsQS','10366avCjTx','#ff9e9e','main.html','8628545wWvJZi','loginBtn','mansi2008','userName','setItem','color','pranshu2008','5565344biEROQ','6tboUaK','password','#a6ffb6','51051717ZomkNY','172081','getElementById','href','nayan@20099'];_0x5d75=function(){return _0x3cf905;};return _0x5d75();}
+
+    // Info Modal Logic
+    const infoBtn = document.getElementById('infoBtn');
+    const infoModal = document.getElementById('infoModal');
+    const closeInfoModal = document.getElementById('closeInfoModal');
+
+    infoBtn.onclick = function() {
+      infoModal.style.display = 'flex';
+    };
+    closeInfoModal.onclick = function() {
+      infoModal.style.display = 'none';
+    };
+    infoModal.onclick = function(e) {
+      if (e.target === infoModal) infoModal.style.display = 'none';
+    };
+  </script>
+</body>
+</html>

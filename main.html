@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>12 Board Booster - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #a0c4ff;
+    }
+    .owner {
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #cbd3ff;
+      margin-bottom: 40px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background-color: #7f9cff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #5e7edc;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #ffd6d6;
+    }
+    /* Modal styles */
+    #batchModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(13, 27, 42, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    #batchModal > div {
+      background: linear-gradient(145deg, #131b2a, #0c1421);
+      border-radius: 18px;
+      box-shadow: 0 0 25px 4px #2f3a68;
+      padding: 36px 32px 28px;
+      max-width: 350px;
+      width: 90%;
+      color: #ccd6f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #batchModal input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: none;
+      background: #202d59;
+      color: #d9e4ff;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+    #batchModal button {
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 12px;
+      color: #e7ecff;
+      font-weight: 900;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+    }
+    #batchModal #submitBatchBtn {
+      background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+    }
+    #batchModal #closeBatchBtn {
+      margin-top: 12px;
+      background: none;
+      color: #aac8ff;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #batchError {
+      color: #ff9e9e;
+      font-size: 0.98rem;
+      min-height: 22px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome, <span id="userName">User</span> 👋</h1>
+  <div class="owner">12 Board Booster - Owned by Nayan Gupta</div>
+
+  <button id="joinBtn" type="button">Join Batch</button>
+  <div id="message"></div>
+
+  <button onclick="logout()">Logout</button>
+
+  <div id="batchModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(13,27,42,0.92); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:linear-gradient(145deg,#131b2a,#0c1421); border-radius:18px; box-shadow:0 0 25px 4px #2f3a68; padding:36px 32px 28px; max-width:350px; width:90%; color:#ccd6f6; display:flex; flex-direction:column; align-items:center;">
+      <div style="font-size:1.1rem; color:#8db1ff; font-weight:700; margin-bottom:18px; text-align:center;">ENTER THE BATCH CODE WHICH NAYAN GUPTA HAS GIVE YOU.</div>
+      <input id="batchCodeInput" type="text" placeholder="Batch Code" style="width:100%; padding:12px 16px; border-radius:10px; border:none; background:#202d59; color:#d9e4ff; font-size:1rem; margin-bottom:18px;" />
+      <div id="batchError" style="color:#ff9e9e; font-size:0.98rem; min-height:22px; margin-bottom:10px;"></div>
+      <button id="submitBatchBtn" style="padding:12px 0; width:100%; border-radius:12px; background:linear-gradient(135deg,#7f9cff,#2a3b8e); color:#e7ecff; font-weight:900; font-size:1.1rem; border:none; cursor:pointer;">Submit</button>
+      <button id="closeBatchBtn" style="margin-top:12px; background:none; color:#aac8ff; border:none; font-size:1rem; cursor:pointer;">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+  // Show logged in user's name
+  const storedName = localStorage.getItem("userName");
+  if (storedName) {
+    document.getElementById("userName").innerText = storedName;
+  }
+
+  // Modal logic
+  const joinBtn = document.getElementById('joinBtn');
+  const batchModal = document.getElementById('batchModal');
+  const batchCodeInput = document.getElementById('batchCodeInput');
+  const batchError = document.getElementById('batchError');
+  const submitBatchBtn = document.getElementById('submitBatchBtn');
+  const closeBatchBtn = document.getElementById('closeBatchBtn');
+
+  joinBtn.onclick = function() {
+    batchModal.style.display = 'flex';
+    batchCodeInput.value = '';
+    batchError.innerText = '';
+    batchCodeInput.focus();
+  };
+  closeBatchBtn.onclick = function() {
+    batchModal.style.display = 'none';
+  };
+  submitBatchBtn.onclick = function() {
+    const code = batchCodeInput.value.trim();
+    if (code === '12PCMNAYAN') {
+      // Redirect to the correct page (studypage2.html in your workspace)
+      window.location.href = 'studypage1.html';
+    } else {
+      batchError.innerText = 'Invalid batch code.';
+    }
+  };
+  // Optional: close modal on outside click
+  batchModal.onclick = function(e) {
+    if (e.target === batchModal) batchModal.style.display = 'none';
+  };
+  // Optional: allow Enter key to submit
+  batchCodeInput.onkeydown = function(e) {
+    if (e.key === 'Enter') submitBatchBtn.click();
+  };
+  // Dummy logout function
+  function logout() {
+    localStorage.removeItem('userName');
+    window.location.href = 'login.html';
+  }
+  </script>
+
+</body>
+</html>

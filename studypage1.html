@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTZREHH8RT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-LTZREHH8RT');
+  </script>
+  <meta charset="UTF-8" />
+  <title>12 Boards Booster - Space Theme</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    * {
+      margin: 0;
+    }
+
+    /* Space background with stars */
+    .main {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(ellipse at bottom, #0b0c1a 0%, #000010 100%);
+      color: #cfdfff;
+      text-shadow:
+        0 0 5px #aabbff,
+        0 0 10px #8899ff,
+        0 0 15px #6677cc;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Star twinkling animation */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(2px 2px at 10% 20%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 20% 80%, #d0e0ff, transparent),
+        radial-gradient(1.8px 1.8px at 80% 30%, #aaccff, transparent),
+        radial-gradient(2px 2px at 50% 50%, #c0d0ff, transparent),
+        radial-gradient(1.3px 1.3px at 70% 75%, #aabbff, transparent);
+      background-repeat: repeat;
+      background-size: 100px 100px;
+      animation: twinkle 15s infinite alternate;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      0% {
+        background-position:
+          10% 20%,
+          20% 80%,
+          80% 30%,
+          50% 50%,
+          70% 75%;
+      }
+
+      100% {
+        background-position:
+          15% 25%,
+          25% 85%,
+          85% 35%,
+          55% 55%,
+          75% 80%;
+      }
+    }
+
+    header {
+      background: #0a0b24;
+      padding: 20px;
+      text-align: center;
+      font-size: 2.5em;
+      color: #aaccff;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 3px;
+      text-shadow:
+        0 0 10px #aaccff,
+        0 0 20px #8899ff,
+        0 0 30px #6677cc;
+      border-bottom: 3px solid #334477;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    aside {
+      width: 260px;
+      background: #1a1e40;
+      border-radius: 15px;
+      padding: 20px;
+      color: #cfdfff;
+      font-weight: bold;
+      box-shadow:
+        0 0 20px #4455aa,
+        inset 0 0 10px #8899ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      user-select: none;
+      position: relative;
+    }
+
+    aside h3 {
+      margin-bottom: 15px;
+      color: #aaccff;
+      text-shadow: 0 0 15px #6699ff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    aside::after {
+      content: "🌙";
+      font-size: 5em;
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      color: #aaccff;
+      text-shadow:
+        0 0 10px #aaccff,
+        0 0 20px #6677cc,
+        0 0 30px #4455aa;
+      opacity: 0.7;
+      user-select: none;
+    }
+
+    aside p.quote {
+      margin-top: 25px;
+      font-style: italic;
+      color: #aaccff;
+      text-shadow: 0 0 5px #7799ff;
+      font-size: 1em;
+    }
+
+    .subject {
+      flex: 1;
+    }
+
+    .subject h2 {
+      border-bottom: 2px solid #4466cc;
+      padding-bottom: 10px;
+      color: #aaccee;
+      text-shadow: 0 0 10px #4455aa;
+    }
+
+    .chapter {
+      margin: 10px 0;
+      cursor: pointer;
+      background: #334477;
+      padding: 12px;
+      border-radius: 10px;
+      transition: background 0.3s, box-shadow 0.3s;
+      color: #ccddee;
+      box-shadow: 0 0 15px #4466cc;
+      user-select: none;
+    }
+
+    .chapter:hover {
+      background: #5577dd;
+      color: #fff;
+      box-shadow:
+        0 0 20px #77aaff,
+        0 0 30px #4466cc;
+    }
+
+    .topics {
+      display: none;
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+
+    .topics li {
+      margin: 6px 0;
+      color: #cce0ff;
+      text-shadow: 0 0 5px #7799ff;
+    }
+
+    .topics a {
+      color: #aaddff;
+      text-decoration: none;
+    }
+
+    .topics a:hover {
+      text-decoration: underline;
+      color: #d0eaff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a0b24;
+      color: #aaccff;
+      border-top: 3px solid #334477;
+      text-shadow: 0 0 10px #4466cc;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+    }
+
+    #nextpage {
+      margin-top: 20px;
+      list-style: none;
+      text-align: center;
+    }
+
+    #nextpage a {
+      display: inline-block;
+      padding: 12px 25px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.2em;
+      color: #aaccff;
+      background: linear-gradient(45deg, #334477, #5577dd);
+      border-radius: 15px;
+      text-decoration: none;
+      box-shadow:
+        0 0 8px #77aaff,
+        0 0 20px #4466cc,
+        inset 0 0 10px #aaccff;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      user-select: none;
+    }
+
+    #nextpage a:hover {
+      background: linear-gradient(45deg, #5577dd, #aaddff);
+      color: #fff;
+      box-shadow:
+        0 0 15px #aaddff,
+        0 0 30px #77aaff,
+        inset 0 0 15px #ddeeff;
+    }
+
+    /* Lock Overlay Styles */
+    #lockOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(13, 27, 42, 0.97);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    #lockOverlay div {
+      background: linear-gradient(145deg, #131b2a, #0c1421);
+      border-radius: 18px;
+      box-shadow: 0 0 25px 4px #2f3a68;
+      padding: 36px 32px 28px;
+      max-width: 350px;
+      width: 90%;
+      color: #ccd6f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #lockOverlay div div {
+      font-size: 2.5em;
+      margin-bottom: 18px;
+    }
+
+    #lockOverlay div input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: none;
+      background: #202d59;
+      color: #d9e4ff;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    #lockOverlay div #lockError {
+      color: #ff9e9e;
+      font-size: 0.98rem;
+      min-height: 22px;
+      margin-bottom: 10px;
+    }
+
+    #lockOverlay div button {
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+      color: #e7ecff;
+      font-weight: 900;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lockOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
+      <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
+      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:18px;text-align:center;">This page is locked.<br>Enter the password to access.</div>
+      <input id="pagePasswordInput" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:10px;border:none;background:#202d59;color:#d9e4ff;font-size:1rem;margin-bottom:18px;" />
+      <div id="lockError" style="color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;"></div>
+      <button id="unlockBtn" style="padding:12px 0;width:100%;border-radius:12px;background:linear-gradient(135deg,#7f9cff,#2a3b8e);color:#e7ecff;font-weight:900;font-size:1.1rem;border:none;cursor:pointer;">Unlock</button>
+    </div>
+  </div>
+
+  <header>12 Boards Booster</header>
+  <!-- Music and Quote (Bottom Right) -->
+  <div id="musicBox" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #87cefa;
+  pointer-events: auto;
+  text-shadow: 0 0 5px #00ffff;
+">
+
+    <audio id="bgMusic" autoplay loop>
+      <source src="goosebumps.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button onclick="toggleMusic()" id="musicBtn" style="
+    padding: 6px 14px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+    text-shadow: 0 0 3px #fff;
+  ">
+      🔊 Pause Music
+    </button>
+  </div>
+
+
+  <!-- Clock and Logout Bar -->
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <div id="clock" style="
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5em;
+      color: #5197ff;
+      text-shadow: 0 0 10px #aaccff, 0 0 20px #8899ff, 0 0 30px #6677cc;
+    "></div>
+
+    <button onclick="logout()" style="
+      background-color: #1a1e40;
+      border: none;
+      color: #aaddff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-shadow: 0 0 5px #7799ff;
+      box-shadow: 0 0 15px #4466cc;
+      font-family: 'Orbitron', sans-serif;
+      transition: background 0.3s, box-shadow 0.3s;
+    " onmouseover="this.style.backgroundColor='#334477'" onmouseout="this.style.backgroundColor='#1a1e40'">
+      Logout
+    </button>
+  </div>
+
+  <div class="main">
+    <div class="container">
+      <aside>
+        <h3>12 Boards Booster</h3>
+        Made by <br /> <strong>Nayan Gupta</strong>
+        <p class="quote">"Confidence is not arrogance,<br>it's mastery in motion."</p>
+        <br> <img src="space.jpg" alt="Space image" width="180" height="180">
+      </aside>
+
+      <div class="subject">
+        <h2>Physics</h2>
+        <div class="chapter" onclick="toggleTopics('physics1')">Chapter 1: Electric Charges and Fields</div>
+        <ul class="topics" id="physics1">
+          <li><a href="https://drive.google.com/file/d/16acs-7J6_7aTgzWwBV0Kdf2Eak2xCAL-/view?usp=sharing"
+              target="_blank">Electric Charges (Introduction to Charges) </a></li>
+          <li><a href="https://drive.google.com/file/d/1wcLWSkgX37hNqhrqhFzo50HP-RGpRtuU/view?usp=sharing"
+              target="_blank">Couloumb Law (Easy derivation)</a></li>
+          <li><a href="https://drive.google.com/file/d/1HoUlY-OQIrCXOzdUNqRhAwSF7lQWcfMD/view?usp=sharing"
+              target="_blank">Vector Form Of Coloumb law (Easy derivation)</a></li>
+          <li><a href="https://drive.google.com/file/d/1lQxPiSAOIeYYwTYuUJQQ20K26dFjGi-7/view?usp=sharing"
+              target="_blank">Electric Field</a></li>
+          <li><a href="https://drive.google.com/file/d/1DLnM8L43JXunziMzFpApT-UA4auS5VMl/view?usp=sharing"
+              target="_blank">Propties of Electric Field (very imp)</a></li>
+          <li><a href="https://drive.google.com/file/d/1h8obQoTdfnEb48owZaa0q4j7_oTZJLoF/view?usp=sharing"
+              target="_blank">Electric Dipole</a></li>
+          <li><a href="https://drive.google.com/file/d/1AYWgSHLzlUhb5b2QJ0Vk4f0jHAY8dEUY/view?usp=sharing"
+              target="_blank">Electric Flux</a></li>
+
+          <li><a href="https://drive.google.com/file/d/1Bez20e5kbQPuT-LBOVQXfrQVQ9-lIyWD/view?usp=sharing"
+              target="_blank">Gauss's Law</a></li>
+          <li><a href="https://drive.google.com/file/d/1kND0ZEIw3hPTjSuuLta8AJnm-uiqlIO_/view?usp=sharing"
+              target="_blank">Torque acting on an electric dipole in electric field</a></li>
+          <li><a href="" target="_blank">Examples of 1st Chapter (Comming Soon) </a></li>
+          <li><a href="" target="_blank">Exercise of 1st Chapter (Comming Soon) </a></li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('physics2')">Chapter 2: Electrostatic Potential and Capacitance</div>
+        <ul class="topics" id="physics2">
+          <li>Electrostatic Potential</li>
+          <li>Potential Difference</li>
+          <li>Equipotential Surfaces</li>
+          <li>Electric Potential Energy</li>
+          <li>Capacitors and Capacitance</li>
+          <li>Combination of Capacitors</li>
+          <li>Energy Stored in a Capacitor</li>
+        </ul>
+
+        <h2>Chemistry</h2>
+        <div class="chapter" onclick="toggleTopics('chemistry1')">Chapter 1: Solutions</div>
+        <ul class="topics" id="chemistry1">
+          <li>Types of Solutions</li>
+          <li>Expressing Concentration</li>
+          <li>Solubility</li>
+          <li>Vapour Pressure</li>
+          <li>Raoult's Law</li>
+          <li>Ideal and Non-Ideal Solutions</li>
+          <li>Colligative Properties</li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('chemistry2')">Chapter 2: Electrochemistry</div>
+        <ul class="topics" id="chemistry2">
+          <li>Electrochemical Cells</li>
+          <li>Galvanic Cells</li>
+          <li>Nernst Equation</li>
+          <li>Conductance of Electrolytic Solutions</li>
+          <li>Electrolysis</li>
+          <li>Batteries</li>
+          <li>Fuel Cells</li>
+        </ul>
+
+        <h2>Mathematics</h2>
+        <div class="chapter" onclick="toggleTopics('maths1')">Chapter 1: Relations and Functions</div>
+        <ul class="topics" id="maths1">
+          <li><a href="https://drive.google.com/file/d/1X2_2MeejNUJ40hH8EeONV_I8uPpOXSZc/view?usp=sharing"
+              target="_blank">Exercise-1.1</a></li>
+          <li><a href="https://drive.google.com/file/d/1XiHfsUL5Ejo3_oWsNMfUYG329E6RprSL/view?usp=sharing"
+              target="_blank">Exercise-1.2</a></li>
+          <li><a href="https://drive.google.com/file/d/1hTQ74Jy5MozmG_CH3kWBKLT9jeEuZgTX/view?usp=sharing"
+              target="_blank">Exercise-1 </a></li>
+          <li><a href="https://drive.google.com/file/d/1-aDlI1DFK7Q19xCpWQbITBvhARXKUa0p/view?usp=sharing"
+              target="_blank">Example-1-26</a></li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('maths2')">Chapter 2: Inverse Trigonometric Functions</div>
+        <ul class="topics" id="maths2">
+          <li><a href="https://drive.google.com/file/d/1Bo__te1-aLvNmdG-UKt5TFf9EcsZ02R_/view?usp=sharing"
+              target="_blank">Exercise-2.1</a></li>
+          <li><a href="https://drive.google.com/file/d/1KwCA_aJ21hAq_3KnAQ_P39_FOIaViF6w/view?usp=sharing"
+              target="_blank">Exercise-2.2</a></li>
+          <li><a href="https://drive.google.com/file/d/1fguH0odsB-BVLaVCR4t8I8s6YSJ5gnPh/view?usp=sharing"
+              target="_blank">Exercise-2</a></li>
+          <li><a href="https://drive.google.com/file/d/162hnJalruTPuYRxrYBQ_r-0H4Ve__xwO/view?usp=sharing"
+              target="_blank">Example 1-6 </a></li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('maths3')">Chapter 3: Matrices</div>
+        <ul class="topics" id="maths3">
+          <li><a href="https://drive.google.com/file/d/1zqvIgYYmBLpc5gK7wnjZ1rzPfVQRExJp/view?usp=sharing"
+              target="_blank">Exercise-3.1</a></li>
+          <li><a href="https://drive.google.com/file/d/1bawpuoBtkRtYQmauJX1ohuaRQOBwsmna/view?usp=sharing"
+              target="_blank">Exercise-3.2</a></li>
+          <li><a href="https://drive.google.com/file/d/19c8XG2k_SmhdWpHrQJri3rsSMauM8cbz/view?usp=sharing"
+              target="_blank">Exercise-3.3 and 3.4 </a></li>
+          <li><a href="https://drive.google.com/file/d/11ZOh_50H-eS0p61y5ChE-P70xy58D60E/view?usp=sharing"
+              target="_blank">Exercise-3</a></li>
+          <li><a href="https://drive.google.com/file/d/15hbOzZWOUExBAbU2Wuz__XatUqLwr_2I/view?usp=sharing"
+              target="_blank">Examples 1 to 25</a></li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('maths4')">Chapter 4: Determinants</div>
+        <ul class="topics" id="maths4">
+          <li><a href="https://drive.google.com/file/d/1gRj2C8nZ9styTUXhdTicZl7hMWfKCueh/view?usp=sharing"
+              target="_blank">Exercise-4.1</a></li>
+          <li><a href="https://drive.google.com/file/d/1imBDKDiW9pc72ZSp_CBhmrzG4vXMPrI4/view?usp=sharing"
+              target="_blank">Exercise-4.2</a></li>
+          <li><a href="https://drive.google.com/file/d/1GY4-AzmuNrWu-4tW11mZTLjI820tteWr/view?usp=sharing"
+              target="_blank">Exercise-4.3</a></li>
+          <li><a href="https://drive.google.com/file/d/1Hy0-zocvY1g_W1q0xm8SsyPi2UauQFtJ/view?usp=sharing"
+              target="_blank">Exercise-4.4</a></li>
+          <li><a href="https://drive.google.com/file/d/1BcJkCOxk23OZXje3er6Y9wSLoKoA96x6/view?usp=sharing"
+              target="_blank">Exercise-4.5</a></li>
+          <li><a href="https://drive.google.com/file/d/13VRDLbxJ5BWWFVZxIUYKesGbAPelYnwd/view?usp=sharing"
+              target="_blank">Exercise-4</a></li>
+          <li><a href="https://drive.google.com/file/d/1mPw60clJPuususDyjJf5B03qE2TC4sKr/view?usp=sharing"
+              target="_blank">Example 1-19 </a></li>
+        </ul>
+        <div class="chapter" onclick="toggleTopics('maths5')">Chapter 5: Continuity and Differentiability</div>
+        <ul class="topics" id="maths5">
+          <li><a href="https://drive.google.com/file/d/1BRg84ZQN0DcuJJj0W3OL8vnXK2OMG0cj/view?usp=sharing"
+              target="_blank">Exercise-5.1</a></li>
+          <li><a href="https://drive.google.com/file/d/1LebPIDgIdqyBV-FIqXoGpC3ZGQNFo3N6/view?usp=sharing"
+              target="_blank">Exercise-5.2</a></li>
+          <li><a href="https://drive.google.com/file/d/1CAB9WM6YRHjNq8iho35RyTGlrLx1o0uP/view?usp=sharing"
+              target="_blank">Exercise-5.3</a></li>
+          <li><a href="https://drive.google.com/file/d/1FLh3xrwJvht3izf9L5Pu9N7vjaJSwh7H/view?usp=sharing"
+              target="_blank">Exercise-5.4</a></li>
+
+        </ul>
+        <!-- NEXT PAGE LINK  -->
+        <ul>
+          <li id="nextpage"><a href="studypage2.html" target="_blank">Lets move on 2nd page</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer>
+      This website has all rights reserved and made in 2025.<br />
+      Made by Nayan Gupta
+    </footer>
+  </div>
+
+  <script>
+    function toggleTopics(id) {
+      const topics = document.getElementById(id);
+      topics.style.display = (topics.style.display === "block") ? "none" : "block";
+    }
+
+    function logout() {
+      // Redirect to login page
+      window.location.href = "index.html";
+    }
+
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const timeStr = `${hours.toString().padStart(2, '0')}:` +
+        `${minutes.toString().padStart(2, '0')}:` +
+        `${seconds.toString().padStart(2, '0')} ${ampm}`;
+      document.getElementById('clock').textContent = timeStr;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    //Music Java 
+    function toggleMusic() {
+      const music = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+
+      if (music.paused) {
+        music.play();
+        btn.textContent = '🔊 Pause Music';
+      } else {
+        music.pause();
+        btn.textContent = '🔈 Play Music';
+      }
+    }
+
+    // Password lock overlay logic
+    const lockOverlay = document.getElementById('lockOverlay');
+    const pagePasswordInput = document.getElementById('pagePasswordInput');
+    const lockError = document.getElementById('lockError');
+    const unlockBtn = document.getElementById('unlockBtn');
+
+    function showLock() {
+      lockOverlay.style.display = 'flex';
+      pagePasswordInput.value = '';
+      lockError.innerText = '';
+      pagePasswordInput.focus();
+      // Ensure body CSS is not changed by overlay
+      document.body.style.overflow = '';
+      document.body.style.pointerEvents = '';
+    }
+    function hideLock() {
+      lockOverlay.style.display = 'none';
+      // Restore body's overflow and pointer-events if changed
+      document.body.style.overflow = '';
+      document.body.style.pointerEvents = '';
+    }
+    unlockBtn.onclick = function() {
+      if (pagePasswordInput.value.trim() === '12PCM') {
+        hideLock();
+      } else {
+        lockError.innerText = 'Incorrect password.';
+      }
+    };
+    pagePasswordInput.onkeydown = function(e) {
+      if (e.key === 'Enter') unlockBtn.click();
+    };
+    // Show lock on page load
+    showLock();
+  </script>
+</body>
+
+</html>

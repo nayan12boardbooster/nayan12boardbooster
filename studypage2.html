@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>12 Boards Booster - Space Theme</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+        * {
+            margin: 0;
+        }
+
+        /* Space background with stars */
+        .main {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(ellipse at bottom, #0b0c1a 0%, #000010 100%);
+            color: #cfdfff;
+            text-shadow:
+                0 0 5px #aabbff,
+                0 0 10px #8899ff,
+                0 0 15px #6677cc;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Star twinkling animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(2px 2px at 10% 20%, #fff, transparent),
+                radial-gradient(1.5px 1.5px at 20% 80%, #d0e0ff, transparent),
+                radial-gradient(1.8px 1.8px at 80% 30%, #aaccff, transparent),
+                radial-gradient(2px 2px at 50% 50%, #c0d0ff, transparent),
+                radial-gradient(1.3px 1.3px at 70% 75%, #aabbff, transparent);
+            background-repeat: repeat;
+            background-size: 100px 100px;
+            animation: twinkle 15s infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes twinkle {
+            0% {
+                background-position:
+                    10% 20%,
+                    20% 80%,
+                    80% 30%,
+                    50% 50%,
+                    70% 75%;
+            }
+
+            100% {
+                background-position:
+                    15% 25%,
+                    25% 85%,
+                    85% 35%,
+                    55% 55%,
+                    75% 80%;
+            }
+        }
+
+        header {
+            background: #0a0b24;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            color: #aaccff;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 3px;
+            text-shadow:
+                0 0 10px #aaccff,
+                0 0 20px #8899ff,
+                0 0 30px #6677cc;
+            border-bottom: 3px solid #334477;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        aside {
+            width: 260px;
+            background: #1a1e40;
+            border-radius: 15px;
+            padding: 20px;
+            color: #cfdfff;
+            font-weight: bold;
+            box-shadow:
+                0 0 20px #4455aa,
+                inset 0 0 10px #8899ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+        }
+
+        aside h3 {
+            margin-bottom: 15px;
+            color: #aaccff;
+            text-shadow: 0 0 15px #6699ff;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        aside::after {
+            content: "🌙";
+            font-size: 5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #aaccff;
+            text-shadow:
+                0 0 10px #aaccff,
+                0 0 20px #6677cc,
+                0 0 30px #4455aa;
+            opacity: 0.7;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 25px;
+            font-style: italic;
+            color: #aaccff;
+            text-shadow: 0 0 5px #7799ff;
+            font-size: 1em;
+        }
+
+        .subject {
+            flex: 1;
+
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #4466cc;
+            padding-bottom: 10px;
+            color: #aaccee;
+            text-shadow: 0 0 10px #4455aa;
+        }
+
+        .chapter {
+            margin: 10px 0;
+            cursor: pointer;
+            background: #334477;
+            padding: 12px;
+            border-radius: 10px;
+            transition: background 0.3s, box-shadow 0.3s;
+            color: #ccddee;
+            box-shadow: 0 0 15px #4466cc;
+            user-select: none;
+        }
+
+        .chapter:hover {
+            background: #5577dd;
+            color: #fff;
+            box-shadow:
+                0 0 20px #77aaff,
+                0 0 30px #4466cc;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .topics li {
+            margin: 6px 0;
+            color: #cce0ff;
+            text-shadow: 0 0 5px #7799ff;
+        }
+
+        .topics a {
+            color: #aaddff;
+            text-decoration: none;
+        }
+
+        .topics a:hover {
+            text-decoration: underline;
+            color: #d0eaff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0a0b24;
+            color: #aaccff;
+            border-top: 3px solid #334477;
+            text-shadow: 0 0 10px #4466cc;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+        }
+
+        #nextpage {
+            margin-top: 20px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 12px 25px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #aaccff;
+            background: linear-gradient(45deg, #334477, #5577dd);
+            border-radius: 15px;
+            text-decoration: none;
+            box-shadow:
+                0 0 8px #77aaff,
+                0 0 20px #4466cc,
+                inset 0 0 10px #aaccff;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(45deg, #5577dd, #aaddff);
+            color: #fff;
+            box-shadow:
+                0 0 15px #aaddff,
+                0 0 30px #77aaff,
+                inset 0 0 15px #ddeeff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>12 Boards Booster</header>
+    <!-- Music and Quote (Bottom Right) -->
+    <div id="musicBox" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #87cefa;
+  pointer-events: auto;
+  text-shadow: 0 0 5px #00ffff;
+">
+
+        <audio id="bgMusic" autoplay loop>
+            <source src="goosebumps.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <button onclick="toggleMusic()" id="musicBtn" style="
+    padding: 6px 14px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+    text-shadow: 0 0 3px #fff;
+  ">
+            🔊 Pause Music
+        </button>
+    </div>
+
+    <!-- Clock and Logout Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+        <div id="clock" style="
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5em;
+      color: #5197ff;
+      text-shadow: 0 0 10px #aaccff, 0 0 20px #8899ff, 0 0 30px #6677cc;
+    "></div>
+
+        <button onclick="logout()" style="
+      background-color: #1a1e40;
+      border: none;
+      color: #aaddff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      text-shadow: 0 0 5px #7799ff;
+      box-shadow: 0 0 15px #4466cc;
+      font-family: 'Orbitron', sans-serif;
+      transition: background 0.3s, box-shadow 0.3s;
+    " onmouseover="this.style.backgroundColor='#334477'" onmouseout="this.style.backgroundColor='#1a1e40'">
+            Logout
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="container">
+            <aside>
+                <h3>12 Boards Booster</h3>
+                Made by <br /> <strong>Nayan Gupta</strong>
+                <p class="quote">"Confidence is not arrogance,<br>it's mastery in motion."</p>
+                <br> <img src="space.jpg" alt="Space image" width="180" height="180">
+            </aside>
+
+            <div class="subject">
+                <h2>English</h2>
+                <div class="chapter" onclick="toggleTopics('english1')">Chapter 1: The Last Lesson</div>
+                <ul class="topics" id="english1">
+                    <li><a href="https://drive.google.com/file/d/1Pz-2FU4KYJY33Ah4JFQ06Z2cMMUlFQw5/view?usp=sharing"
+                            target="_blank">The Last Lesson</a></li>
+                </ul>
+                <ul>
+                    <div class="subject">
+                    <h2>Computer</h2>
+                    <div class="chapter" onclick="toggleTopics('computer1')">Html Introduction By Nayan Gupta</div>
+                    <ul class="topics" id="computer1">
+                    <li><a href="https://drive.google.com/file/d/1yORUch-5OtCTuA0qqb7ET-3qBBCNs6er/view?usp=sharing"
+                     target="_blank">HTML_Complete_Notes.pdf By Nayan Gupta</a></li>
+</ul>
+                        <!-- NEXT PAGE LINK BELOW CHAPTER 4 -->
+                        <ul>
+                            <li id="nextpage"><a href="main.html" target="_blank">Lets move on 1st page</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+
+        <footer>
+            This website has all rights reserved and made in 2025.<br />
+            Made by Nayan Gupta
+        </footer>
+
+        <script>
+            function toggleTopics(id) {
+                const topics = document.getElementById(id);
+                topics.style.display = (topics.style.display === "block") ? "none" : "block";
+            }
+
+            function logout() {
+                // Redirect to login page
+                window.location.href = "login.html";
+            }
+
+            function updateClock() {
+                const now = new Date();
+                let hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12 || 12;
+                const timeStr = `${hours.toString().padStart(2, '0')}:` +
+                    `${minutes.toString().padStart(2, '0')}:` +
+                    `${seconds.toString().padStart(2, '0')} ${ampm}`;
+                document.getElementById('clock').textContent = timeStr;
+            }
+            setInterval(updateClock, 1000);
+            updateClock();
+
+            //Music Java 
+            function toggleMusic() {
+                const music = document.getElementById('bgMusic');
+                const btn = document.getElementById('musicBtn');
+
+                if (music.paused) {
+                    music.play();
+                    btn.textContent = '🔊 Pause Music';
+                } else {
+                    music.pause();
+                    btn.textContent = '🔈 Play Music';
+                }
+            }
+
+        </script>
+</body>
+
+</html>
