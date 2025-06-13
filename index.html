@@ -130,7 +130,9 @@
       color: #9bbcff;
     }
     footer {
-      /* Remove position: fixed to allow footer to scroll with content */
+      position: fixed;
+      bottom: 0;
+      left: 0;
       width: 100%;
       text-align: center;
       color: #7e8cbfaa;
@@ -138,7 +140,10 @@
       font-weight: 600;
       font-size: 0.85rem;
       text-shadow: 0 0 2px #4863db55;
-      margin-top: 32px;
+      margin-top: 0;
+      background: linear-gradient(90deg, #131b2a 60%, #0c1421 100%);
+      z-index: 20;
+      padding-bottom: 8px;
     }
 
     /* Modal styling */
