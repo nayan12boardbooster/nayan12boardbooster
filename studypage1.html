@@ -305,17 +305,48 @@
       border: none;
       cursor: pointer;
     }
+
+    /* Top Bar Styles */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 24px 0 24px;
+    }
+
+    .top-bar .title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #7f9cff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .top-bar .button {
+      background: #202d59;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      cursor: pointer;
+      font-size: 1.05em;
+      box-shadow: 0 2px 10px #0006;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Remove Top Bar with Title and Aside Options -->
+
   <div id="lockOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
     <div style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
       <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
-      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:18px;text-align:center;">This page is locked.<br>Enter the password to access.</div>
-      <input id="pagePasswordInput" type="password" placeholder="Enter password" style="width:100%;padding:12px 16px;border-radius:10px;border:none;background:#202d59;color:#d9e4ff;font-size:1rem;margin-bottom:18px;" />
-      <div id="lockError" style="color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;"></div>
-      <button id="unlockBtn" style="padding:12px 0;width:100%;border-radius:12px;background:linear-gradient(135deg,#7f9cff,#2a3b8e);color:#e7ecff;font-weight:900;font-size:1.1rem;border:none;cursor:pointer;">Unlock</button>
+      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:18px;text-align:center;">This page is locked.<br>Draw the pattern to access.</div>
+      <canvas id='patternCanvas' width='240' height='240' style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
+      <div id='lockError' style='color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;'></div>
     </div>
   </div>
 
@@ -512,7 +543,6 @@
               target="_blank">Exercise-5.3</a></li>
           <li><a href="https://drive.google.com/file/d/1FLh3xrwJvht3izf9L5Pu9N7vjaJSwh7H/view?usp=sharing"
               target="_blank">Exercise-5.4</a></li>
-
         </ul>
         <!-- NEXT PAGE LINK  -->
         <ul>
@@ -569,37 +599,86 @@
       }
     }
 
-    // Password lock overlay logic
+    // Dot Pattern Lock Implementation
+    // Replace text password lock with dot pattern lock
     const lockOverlay = document.getElementById('lockOverlay');
-    const pagePasswordInput = document.getElementById('pagePasswordInput');
-    const lockError = document.getElementById('lockError');
-    const unlockBtn = document.getElementById('unlockBtn');
+    lockOverlay.innerHTML = `
+      <div style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
+        <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
+        <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:18px;text-align:center;">This page is locked.<br>Draw the pattern to access.</div>
+        <canvas id='patternCanvas' width='240' height='240' style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
+        <div id='lockError' style='color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;'></div>
+      </div>
+    `;
 
-    function showLock() {
-      lockOverlay.style.display = 'flex';
-      pagePasswordInput.value = '';
-      lockError.innerText = '';
-      pagePasswordInput.focus();
-      // Ensure body CSS is not changed by overlay
-      document.body.style.overflow = '';
-      document.body.style.pointerEvents = '';
-    }
-    function hideLock() {
-      lockOverlay.style.display = 'none';
-      // Restore body's overflow and pointer-events if changed
-      document.body.style.overflow = '';
-      document.body.style.pointerEvents = '';
-    }
-    unlockBtn.onclick = function() {
-      if (pagePasswordInput.value.trim() === '12PCM') {
-        hideLock();
-      } else {
-        lockError.innerText = 'Incorrect password.';
+    const patternCanvas = document.getElementById('patternCanvas');
+    const ctx = patternCanvas.getContext('2d');
+    const dotRadius = 18, grid = 3, spacing = 80;
+    const offset = 40;
+    let dots = [], pattern = [], isDrawing = false, lastDot = null;
+    const correctPattern = [8,5,3,6,9]; // 85369
+
+    // Calculate dot positions
+    for(let y=0;y<grid;y++) for(let x=0;x<grid;x++) dots.push({x:offset+x*spacing, y:offset+y*spacing, n:y*grid+x+1});
+
+    function drawPattern(current) {
+      ctx.clearRect(0,0,240,240);
+      // Draw lines
+      ctx.strokeStyle = '#7f9cff';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      for(let i=0;i<pattern.length;i++) {
+        let d = dots.find(dot=>dot.n===pattern[i]);
+        if(i===0) ctx.moveTo(d.x,d.y);
+        else ctx.lineTo(d.x,d.y);
       }
-    };
-    pagePasswordInput.onkeydown = function(e) {
-      if (e.key === 'Enter') unlockBtn.click();
-    };
+      if(current) ctx.lineTo(current.x,current.y);
+      ctx.stroke();
+      // Draw dots
+      for(let d of dots) {
+        ctx.beginPath();
+        ctx.arc(d.x,d.y,dotRadius,0,2*Math.PI);
+        ctx.fillStyle = pattern.includes(d.n)?'#aaccff':'#334477';
+        ctx.fill();
+        ctx.strokeStyle = '#aaccee';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    }
+
+    drawPattern();
+
+    function getDotAt(x,y) {
+      for(let d of dots) if(Math.hypot(d.x-x,d.y-y)<dotRadius+10 && !pattern.includes(d.n)) return d;
+      return null;
+    }
+
+    patternCanvas.addEventListener('pointerdown',e=>{
+      pattern=[]; isDrawing=true; lastDot=null;
+      const rect=patternCanvas.getBoundingClientRect();
+      const d=getDotAt(e.clientX-rect.left,e.clientY-rect.top);
+      if(d) { pattern.push(d.n); lastDot=d; }
+      drawPattern();
+    });
+    patternCanvas.addEventListener('pointermove',e=>{
+      if(!isDrawing) return;
+      const rect=patternCanvas.getBoundingClientRect();
+      const d=getDotAt(e.clientX-rect.left,e.clientY-rect.top);
+      if(d && (!lastDot||d.n!==lastDot.n)) { pattern.push(d.n); lastDot=d; }
+      drawPattern({x:e.clientX-rect.left,y:e.clientY-rect.top});
+    });
+    patternCanvas.addEventListener('pointerup',()=>{
+      isDrawing=false;
+      drawPattern();
+      if(pattern.length===correctPattern.length && pattern.every((v,i)=>v===correctPattern[i])) {
+        lockOverlay.style.display='none';
+        document.body.style.overflow='';
+        document.body.style.pointerEvents='';
+      } else {
+        document.getElementById('lockError').innerText='Incorrect pattern.';
+        setTimeout(()=>{document.getElementById('lockError').innerText='';pattern=[];drawPattern();},1200);
+      }
+    });
     // Show lock on page load
     showLock();
   </script>
