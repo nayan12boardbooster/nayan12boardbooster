@@ -116,12 +116,17 @@
 <body>
 
   <h1>Welcome, <span id="userName">User</span> 👋</h1>
-  <div class="owner">12 Board Booster - Owned by Nayan Gupta</div>
+  <div class="owner">12 Board Booster - Owned by <span id="ownerName">Nayan Gupta</span></div>
 
   <button id="joinBtn" type="button">Join Batch</button>
   <div id="message"></div>
 
   <button onclick="logout()">Logout</button>
+
+  <div id="welcomeMessage" style="margin-top: 20px; font-size: 1.2rem; color: #ffd6d6;">
+    <p>Welcome <span id="userName">User</span>, Nayan Gupta kindly welcomes you to their website.</p>
+    <p>Enter Batch code to access things and kindly thank you for logging in and using my website.</p>
+  </div>
 
   <div id="batchModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(13,27,42,0.92); z-index:1000; align-items:center; justify-content:center;">
     <div style="background:linear-gradient(145deg,#131b2a,#0c1421); border-radius:18px; box-shadow:0 0 25px 4px #2f3a68; padding:36px 32px 28px; max-width:350px; width:90%; color:#ccd6f6; display:flex; flex-direction:column; align-items:center;">
@@ -134,11 +139,22 @@
   </div>
 
   <script>
-  // Show logged in user's name
-  const storedName = localStorage.getItem("userName");
-  if (storedName) {
-    document.getElementById("userName").innerText = storedName;
-  }
+    // Show logged in user's name
+    const userNames = {
+      'guptanayan312': 'Nayan Gupta',
+      'kavyraj312': 'Kavyaraj Atodariya',
+      'pranshu312': 'Pranshu Gajjar',
+      'Pujan172081': 'Pujan Pandya',
+      'mansi312': 'Mansi Gupta'
+    };
+
+    const storedName = localStorage.getItem("userName");
+
+    if (storedName) {
+      document.getElementById("userName").innerText = storedName;
+    } else {
+      document.getElementById("userName").innerText = "User";
+    }
 
   // Modal logic
   const joinBtn = document.getElementById('joinBtn');

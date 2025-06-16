@@ -2,16 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTZREHH8RT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-LTZREHH8RT');
+    </script>
     <meta charset="UTF-8" />
-    <title>12 Boards Booster - Space Theme</title>
+    <title>12 Boards Booster by Nayan Gupta</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
-        * {
-            margin: 0;
-        }
-
-        /* Space background with stars */
         .main {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -69,176 +71,2329 @@
         }
 
         header {
-            background: #0a0b24;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
             text-align: center;
-            font-size: 2.5em;
-            color: #aaccff;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 3px;
-            text-shadow:
-                0 0 10px #aaccff,
-                0 0 20px #8899ff,
-                0 0 30px #6677cc;
-            border-bottom: 3px solid #334477;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .container {
             flex: 1;
             display: flex;
-            gap: 20px;
-            padding: 20px;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         aside {
-            width: 260px;
-            background: #1a1e40;
-            border-radius: 15px;
-            padding: 20px;
-            color: #cfdfff;
-            font-weight: bold;
-            box-shadow:
-                0 0 20px #4455aa,
-                inset 0 0 10px #8899ff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             user-select: none;
             position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
         }
 
         aside h3 {
-            margin-bottom: 15px;
-            color: #aaccff;
-            text-shadow: 0 0 15px #6699ff;
-            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
         }
 
         aside::after {
-            content: "🌙";
-            font-size: 5em;
+            content: "✨";
+            font-size: 4.5em;
             position: absolute;
             bottom: 10px;
             right: 15px;
-            color: #aaccff;
-            text-shadow:
-                0 0 10px #aaccff,
-                0 0 20px #6677cc,
-                0 0 30px #4455aa;
-            opacity: 0.7;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
             user-select: none;
         }
 
         aside p.quote {
-            margin-top: 25px;
+            margin-top: 28px;
             font-style: italic;
-            color: #aaccff;
-            text-shadow: 0 0 5px #7799ff;
-            font-size: 1em;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
         }
 
         .subject {
             flex: 1;
-
         }
 
         .subject h2 {
-            border-bottom: 2px solid #4466cc;
-            padding-bottom: 10px;
-            color: #aaccee;
-            text-shadow: 0 0 10px #4455aa;
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
         }
 
         .chapter {
-            margin: 10px 0;
+            margin: 16px 0;
             cursor: pointer;
-            background: #334477;
-            padding: 12px;
-            border-radius: 10px;
-            transition: background 0.3s, box-shadow 0.3s;
-            color: #ccddee;
-            box-shadow: 0 0 15px #4466cc;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
             user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
         }
 
         .chapter:hover {
-            background: #5577dd;
-            color: #fff;
-            box-shadow:
-                0 0 20px #77aaff,
-                0 0 30px #4466cc;
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
         }
 
         .topics {
             display: none;
-            margin-left: 20px;
-            margin-top: 5px;
+            margin-left: 28px;
+            margin-top: 10px;
         }
 
         .topics li {
-            margin: 6px 0;
-            color: #cce0ff;
-            text-shadow: 0 0 5px #7799ff;
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
         }
 
         .topics a {
-            color: #aaddff;
-            text-decoration: none;
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
         .topics a:hover {
+            color: #7f53ac;
             text-decoration: underline;
-            color: #d0eaff;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background: #0a0b24;
-            color: #aaccff;
-            border-top: 3px solid #334477;
-            text-shadow: 0 0 10px #4466cc;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
             font-weight: bold;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
         }
 
         #nextpage {
-            margin-top: 20px;
+            margin-top: 28px;
             list-style: none;
             text-align: center;
         }
 
         #nextpage a {
             display: inline-block;
-            padding: 12px 25px;
-            font-family: 'Orbitron', sans-serif;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.2em;
-            color: #aaccff;
-            background: linear-gradient(45deg, #334477, #5577dd);
-            border-radius: 15px;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
             text-decoration: none;
-            box-shadow:
-                0 0 8px #77aaff,
-                0 0 20px #4466cc,
-                inset 0 0 10px #aaccff;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
             transition: background 0.3s, box-shadow 0.3s, color 0.3s;
             user-select: none;
+            border: none;
         }
 
         #nextpage a:hover {
-            background: linear-gradient(45deg, #5577dd, #aaddff);
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
             color: #fff;
-            box-shadow:
-                0 0 15px #aaddff,
-                0 0 30px #77aaff,
-                inset 0 0 15px #ddeeff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(13, 27, 42, 0.97);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #lockOverlay div {
+            background: linear-gradient(145deg, #131b2a, #0c1421);
+            border-radius: 18px;
+            box-shadow: 0 0 25px 4px #2f3a68;
+            padding: 36px 32px 28px;
+            max-width: 350px;
+            width: 90%;
+            color: #ccd6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: none;
+            background: #202d59;
+            color: #d9e4ff;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff9e9e;
+            font-size: 0.98rem;
+            min-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        #lockOverlay div button {
+            padding: 12px 0;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #7f9cff, #2a3b8e);
+            color: #e7ecff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #232946;
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+
+        .main {
+            background: none;
+            color: #232946;
+            text-shadow: none;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 32px 0 22px 0;
+            text-align: center;
+            font-size: 2.8em;
+            color: #7f53ac;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            border-bottom: 2px solid #e0e7ff;
+            box-shadow: 0 4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 24px #fbc2eb88, 0 1px 0 #fff, 0 0 40px #7f53ac99, 0 0 80px #fbc2eb77;
+            position: relative;
+        }
+
+        .header-owner {
+            display: block;
+            font-size: 0.45em;
+            color: #fbc2eb;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            margin-top: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 12px #7f53ac99, 0 0 24px #fbc2eb77;
+            animation: fadeInOwner 2s;
+        }
+
+        @keyframes fadeInOwner {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            gap: 36px;
+            padding: 36px 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 32px 22px;
+            color: #232946;
+            font-weight: 600;
+            box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            user-select: none;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 2px solid #e0e7ff;
+            transition: box-shadow 0.3s;
+        }
+
+        aside h3 {
+            margin-bottom: 18px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+        }
+
+        aside::after {
+            content: "✨";
+            font-size: 4.5em;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            color: #fbc2eb66;
+            text-shadow: 0 0 12px #fbc2eb99;
+            opacity: 0.6;
+            user-select: none;
+        }
+
+        aside p.quote {
+            margin-top: 28px;
+            font-style: italic;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.08em;
+        }
+
+        .subject {
+            flex: 1;
+        }
+
+        .subject h2 {
+            border-bottom: 2px solid #7f53ac;
+            padding-bottom: 12px;
+            color: #7f53ac;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            margin-bottom: 22px;
+            font-family: 'Montserrat', 'Orbitron', sans-serif;
+            font-size: 1.5em;
+        }
+
+        .chapter {
+            margin: 16px 0;
+            cursor: pointer;
+            background: rgba(127, 83, 172, 0.13);
+            padding: 18px;
+            border-radius: 16px;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            color: #232946;
+            box-shadow: 0 2px 16px #7f53ac22, 0 1px 8px #fff8 inset;
+            user-select: none;
+            font-size: 1.12em;
+            font-weight: 600;
+            border: 2px solid #e0e7ff;
+            position: relative;
+        }
+
+        .chapter:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 40px #7f53ac55, 0 2px 8px #fff8 inset;
+            border-color: #7f53ac;
+            z-index: 2;
+        }
+
+        .topics {
+            display: none;
+            margin-left: 28px;
+            margin-top: 10px;
+        }
+
+        .topics li {
+            margin: 10px 0;
+            color: #7f53ac;
+            text-shadow: 0 0 7px #fbc2eb99;
+            font-size: 1.04em;
+        }
+
+        .topics a {
+            color: #232946;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .topics a:hover {
+            color: #7f53ac;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 0 20px 0;
+            background: rgba(255, 255, 255, 0.85);
+            color: #7f53ac;
+            border-top: 2px solid #e0e7ff;
+            text-shadow: 0 0 12px #fbc2eb99, 0 1px 0 #fff;
+            font-weight: bold;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
+            box-shadow: 0 -4px 32px #7f53ac22;
+            backdrop-filter: blur(8px);
+            border-radius: 32px 32px 0 0;
+            font-size: 1.08em;
+        }
+
+        #nextpage {
+            margin-top: 28px;
+            list-style: none;
+            text-align: center;
+        }
+
+        #nextpage a {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Orbitron', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.22em;
+            color: #fff;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33, 0 2px 8px #fff8 inset;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            user-select: none;
+            border: none;
+        }
+
+        #nextpage a:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+            box-shadow: 0 0 32px #fbc2eb77, 0 0 48px #7f53ac55, 0 2px 12px #fff8 inset;
+        }
+
+        /* Lock Overlay Styles (Modern) */
+        #lockOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(251, 194, 235, 0.92);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            transition: background 0.4s;
+        }
+
+        #lockOverlay div {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 24px;
+            box-shadow: 0 0 32px 6px #fbc2eb55;
+            padding: 40px 36px 32px;
+            max-width: 370px;
+            width: 92%;
+            color: #7f53ac;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        #lockOverlay div div {
+            font-size: 2.7em;
+            margin-bottom: 20px;
+        }
+
+        #lockOverlay div input {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 2px solid #e0e7ff;
+            background: #f7f8fa;
+            color: #7f53ac;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        #lockOverlay div #lockError {
+            color: #ff6b6b;
+            font-size: 1.02rem;
+            min-height: 24px;
+            margin-bottom: 12px;
+        }
+
+        #lockOverlay div button {
+            padding: 14px 0;
+            width: 100%;
+            border-radius: 14px;
+            background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.13rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 16px #fbc2eb33;
+            transition: background 0.3s;
+        }
+
+        #lockOverlay div button:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            color: #7f53ac;
+        }
+
+        /* New Header Subtitle Styles */
+        header span {
+            display: block;
+            font-size: 0.38em;
+            color: #fff;
+            background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+            border-radius: 12px;
+            padding: 4px 18px;
+            margin: 12px auto 0 auto;
+            font-family: 'Montserrat', cursive, sans-serif;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            box-shadow: 0 0 16px #fbc2eb77, 0 0 32px #7f53ac44;
+            text-shadow: 0 0 8px #7f53ac99, 0 0 16px #fbc2eb77;
+            animation: fadeInOwner 2s;
         }
     </style>
 </head>
 
 <body>
-    <header>12 Boards Booster</header>
+    <!-- Remove Top Bar with Title and Aside Options -->
+
+    <div id="lockOverlay"
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+        <div
+            style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
+            <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
+            <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:10px;text-align:center;">This page
+                is locked.<br>Draw the pattern to access.</div>
+            <div style="font-size:1em;color:#fbc2eb;font-weight:600;margin-bottom:10px;text-align:center;">Owner: Nayan
+                Gupta</div>
+            <canvas id='patternCanvas' width='240' height='240'
+                style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
+            <div id='lockError' style='color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;'></div>
+        </div>
+    </div>
+
+    <header>12 Boards Booster
+        <span class="header-owner">by Nayan Gupta</span>
+        <span style="
+      display: block;
+      font-size: 0.38em;
+      color: #fff;
+      background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+      border-radius: 12px;
+      padding: 4px 18px;
+      margin: 12px auto 0 auto;
+      font-family: 'Montserrat', cursive, sans-serif;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      box-shadow: 0 0 16px #fbc2eb77, 0 0 32px #7f53ac44;
+      text-shadow: 0 0 8px #7f53ac99, 0 0 16px #fbc2eb77;
+      animation: fadeInOwner 2s;
+    ">Learning together, growing together! 📚✨</span>
+    </header>
     <!-- Music and Quote (Bottom Right) -->
     <div id="musicBox" style="
   position: fixed;
@@ -273,6 +2428,7 @@
         </button>
     </div>
 
+
     <!-- Clock and Logout Bar -->
     <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
         <div id="clock" style="
@@ -299,6 +2455,8 @@
         </button>
     </div>
 
+    </div>
+
     <div class="main">
         <div class="container">
             <aside>
@@ -317,15 +2475,15 @@
                 </ul>
                 <ul>
                     <div class="subject">
-                    <h2>Computer</h2>
-                    <div class="chapter" onclick="toggleTopics('computer1')">Html Introduction By Nayan Gupta</div>
-                    <ul class="topics" id="computer1">
-                    <li><a href="https://drive.google.com/file/d/1yORUch-5OtCTuA0qqb7ET-3qBBCNs6er/view?usp=sharing"
-                     target="_blank">HTML_Complete_Notes.pdf By Nayan Gupta</a></li>
-</ul>
+                        <h2>Computer</h2>
+                        <div class="chapter" onclick="toggleTopics('computer1')">Html Introduction By Nayan Gupta</div>
+                        <ul class="topics" id="computer1">
+                            <li><a href="https://drive.google.com/file/d/1yORUch-5OtCTuA0qqb7ET-3qBBCNs6er/view?usp=sharing"
+                                    target="_blank">HTML_Complete_Notes.pdf By Nayan Gupta</a></li>
+                        </ul>
                         <!-- NEXT PAGE LINK BELOW CHAPTER 4 -->
                         <ul>
-                            <li id="nextpage"><a href="main.html" target="_blank">Lets move on 1st page</a></li>
+                            <li id="nextpage"><a href="studypage1.html" target="_blank">Lets move on 1st page</a></li>
                         </ul>
                     </div>
             </div>
@@ -336,47 +2494,252 @@
             Made by Nayan Gupta
         </footer>
 
-        <script>
-            function toggleTopics(id) {
-                const topics = document.getElementById(id);
-                topics.style.display = (topics.style.display === "block") ? "none" : "block";
+    </div>
+
+    <script>
+        function toggleTopics(id) {
+            const topics = document.getElementById(id);
+            topics.style.display = (topics.style.display === "block") ? "none" : "block";
+        }
+
+        function logout() {
+            // Redirect to login page
+            window.location.href = "index.html";
+        }
+
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            const timeStr = `${hours.toString().padStart(2, '0')}:` +
+                `${minutes.toString().padStart(2, '0')}:` +
+                `${seconds.toString().padStart(2, '0')} ${ampm}`;
+            document.getElementById('clock').textContent = timeStr;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        //Music Java 
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const btn = document.getElementById('musicBtn');
+
+            if (music.paused) {
+                music.play();
+                btn.textContent = '🔊 Pause Music';
+            } else {
+                music.pause();
+                btn.textContent = '🔈 Play Music';
             }
+        }    // --- Modern Dot Pattern Lock Implementation ---
+        const lockOverlay = document.getElementById('lockOverlay');
+        lockOverlay.innerHTML = `
+      <div style="background:rgba(255,255,255,0.98);border-radius:28px;box-shadow:0 0 40px 8px #fbc2eb66;padding:45px 40px 35px;max-width:400px;width:92%;color:#7f53ac;display:flex;flex-direction:column;align-items:center;font-family:'Montserrat','Segoe UI',sans-serif;">
+        <div style="font-size:3.2em;margin-bottom:24px;text-shadow:0 0 15px #fbc2eb99;">🔒</div>
+        <div style="font-size:1.3rem;color:#7f53ac;font-weight:700;margin-bottom:12px;text-align:center;text-shadow:0 0 8px #fbc2eb44;">Welcome to 12 Boards Booster</div>        <div style="font-size:1.1rem;color:#7f53ac;font-weight:600;margin-bottom:25px;text-align:center;">Draw the pattern to access</div>
+        <div style="
+          font-size: 1.15rem;
+          background: linear-gradient(45deg, #7f53ac, #fbc2eb);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          font-weight: 700;
+          margin-bottom: 20px;
+          text-align: center;
+          padding: 8px 20px;
+          border-radius: 15px;
+          border: 2px solid #fbc2eb44;
+          box-shadow: 0 0 20px #7f53ac33;
+          text-shadow: 0 0 15px #fbc2eb66;
+          animation: ownerGlow 2s infinite alternate;
+        ">✨ Created by Nayan Gupta ✨</div>
+        <style>
+          @keyframes ownerGlow {
+            from { text-shadow: 0 0 15px #fbc2eb66; }
+            to { text-shadow: 0 0 25px #7f53ac88; }
+          }
+        </style>
+        <canvas id='patternCanvas'width='320' height='320' style='background:linear-gradient(135deg,#fbc2eb22 0%,#a6c1ee22 100%);border-radius:24px;box-shadow:0 0 30px #fbc2eb44;margin-bottom:22px;touch-action:none;backdrop-filter:blur(8px);border:2px solid #fbc2eb33;'></canvas>
+        <div id='lockError' style='color:#ff6b6b;font-size:1.05rem;min-height:24px;margin-bottom:12px;font-weight:500;text-shadow:0 0 8px #ff6b6b33;'></div>
+      </div>
+    `;
 
-            function logout() {
-                // Redirect to login page
-                window.location.href = "login.html";
-            }
+        const patternCanvas = document.getElementById('patternCanvas');
+        const ctx = patternCanvas.getContext('2d');
+        const dotRadius = 22;  // Increased dot size
+        const grid = 3;
+        const spacing = 90;    // Increased spacing between dots
+        const offset = 70;     // Adjusted offset for larger canvas
+        let dots = [], pattern = [], isDrawing = false, lastDot = null;
+        const correctPattern = [8, 5, 3, 6, 9]; // 85369
 
-            function updateClock() {
-                const now = new Date();
-                let hours = now.getHours();
-                const minutes = now.getMinutes();
-                const seconds = now.getSeconds();
-                const ampm = hours >= 12 ? 'PM' : 'AM';
-                hours = hours % 12 || 12;
-                const timeStr = `${hours.toString().padStart(2, '0')}:` +
-                    `${minutes.toString().padStart(2, '0')}:` +
-                    `${seconds.toString().padStart(2, '0')} ${ampm}`;
-                document.getElementById('clock').textContent = timeStr;
-            }
-            setInterval(updateClock, 1000);
-            updateClock();
+        // Clear any cached patterns
+        sessionStorage.removeItem('patternAttempts');
+        localStorage.removeItem('patternLockState');
 
-            //Music Java 
-            function toggleMusic() {
-                const music = document.getElementById('bgMusic');
-                const btn = document.getElementById('musicBtn');
+        // Calculate dot positions
+        dots = [];
+        for (let y = 0; y < grid; y++) for (let x = 0; x < grid; x++) dots.push({ x: offset + x * spacing, y: offset + y * spacing, n: y * grid + x + 1 }); function drawPattern(current) {
+            ctx.clearRect(0, 0, 320, 320);
 
-                if (music.paused) {
-                    music.play();
-                    btn.textContent = '🔊 Pause Music';
-                } else {
-                    music.pause();
-                    btn.textContent = '🔈 Play Music';
+            // Draw connecting lines with gradient
+            if (pattern.length > 0) {
+                const gradient = ctx.createLinearGradient(0, 0, 320, 320);
+                gradient.addColorStop(0, '#7f53accc');
+                gradient.addColorStop(1, '#fbc2ebcc');
+
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 8;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                ctx.shadowColor = '#fbc2eb';
+                ctx.shadowBlur = 15;
+                ctx.beginPath();
+
+                for (let i = 0; i < pattern.length; i++) {
+                    let d = dots.find(dot => dot.n === pattern[i]);
+                    if (i === 0) ctx.moveTo(d.x, d.y);
+                    else ctx.lineTo(d.x, d.y);
                 }
+                if (current) ctx.lineTo(current.x, current.y);
+                ctx.stroke();
             }
 
-        </script>
+            // Draw dots with enhanced styling
+            for (let d of dots) {
+                const isSelected = pattern.includes(d.n);
+
+                // Outer glow
+                ctx.beginPath();
+                ctx.arc(d.x, d.y, dotRadius + 8, 0, 2 * Math.PI);
+                ctx.fillStyle = isSelected ? '#fbc2eb33' : '#a6c1ee22';
+                ctx.fill();
+
+                // Main dot
+                ctx.beginPath();
+                ctx.arc(d.x, d.y, dotRadius, 0, 2 * Math.PI);
+                ctx.fillStyle = isSelected ? '#7f53ac' : '#ffffff';
+                ctx.shadowColor = isSelected ? '#fbc2eb' : '#a6c1ee';
+                ctx.shadowBlur = isSelected ? 18 : 12;
+                ctx.fill();
+
+                // Dot border
+                ctx.shadowBlur = 0;
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = isSelected ? '#fbc2eb' : '#a6c1eeaa';
+                ctx.stroke();
+
+                // Inner highlight
+                ctx.beginPath();
+                ctx.arc(d.x - dotRadius / 3, d.y - dotRadius / 3, dotRadius / 4, 0, 2 * Math.PI);
+                ctx.fillStyle = isSelected ? '#fbc2eb44' : '#ffffff88';
+                ctx.fill();
+            }
+        }
+
+        drawPattern();
+
+        function getDotAt(x, y) {
+            const touchRadius = dotRadius + 15; // Increased touch area
+            for (let d of dots) {
+                if (Math.hypot(d.x - x, d.y - y) < touchRadius && !pattern.includes(d.n)) return d;
+            }
+            return null;
+        }
+
+        patternCanvas.addEventListener('pointerdown', e => {
+            pattern = []; isDrawing = true; lastDot = null;
+            const rect = patternCanvas.getBoundingClientRect();
+            const d = getDotAt(e.clientX - rect.left, e.clientY - rect.top);
+            if (d) { pattern.push(d.n); lastDot = d; }
+            drawPattern();
+        });
+        patternCanvas.addEventListener('pointermove', e => {
+            if (!isDrawing) return;
+            const rect = patternCanvas.getBoundingClientRect();
+            const d = getDotAt(e.clientX - rect.left, e.clientY - rect.top);
+            if (d && (!lastDot || d.n !== lastDot.n)) { pattern.push(d.n); lastDot = d; }
+            drawPattern(isDrawing ? { x: e.clientX - rect.left, y: e.clientY - rect.top } : null);
+        }); patternCanvas.addEventListener('pointerup', () => {
+            isDrawing = false;
+            drawPattern();
+
+            if (pattern.length === correctPattern.length && pattern.every((v, i) => v === correctPattern[i])) {
+                // Success animation
+                const overlay = lockOverlay.querySelector('div');
+                overlay.style.transform = 'scale(0.95)';
+                overlay.style.transition = 'all 0.3s ease';
+
+                setTimeout(() => {
+                    overlay.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        overlay.style.transform = 'scale(0)';
+                        overlay.style.opacity = '0';
+
+                        setTimeout(() => {
+                            lockOverlay.style.background = 'transparent';
+                            lockOverlay.style.backdropFilter = 'blur(0)';
+
+                            setTimeout(() => {
+                                lockOverlay.style.display = 'none';
+                                document.body.style.overflow = '';
+                                document.body.style.pointerEvents = '';
+
+                                // Clear cache
+                                sessionStorage.clear();
+                                localStorage.removeItem('patternLockState');
+                                pattern = [];
+                            }, 300);
+                        }, 200);
+                    }, 100);
+                }, 100);
+            } else {
+                // Error animation and feedback
+                const errorElem = document.getElementById('lockError');
+                const canvas = document.getElementById('patternCanvas');
+
+                canvas.style.transform = 'translateX(10px)';
+                canvas.style.transition = 'transform 0.1s ease';
+
+                setTimeout(() => {
+                    canvas.style.transform = 'translateX(-8px)';
+                    setTimeout(() => {
+                        canvas.style.transform = 'translateX(6px)';
+                        setTimeout(() => {
+                            canvas.style.transform = 'translateX(-4px)';
+                            setTimeout(() => {
+                                canvas.style.transform = 'translateX(0)';
+                            }, 50);
+                        }, 50);
+                    }, 50);
+                }, 50);
+
+                errorElem.innerText = 'Incorrect pattern. Please try again.';
+                errorElem.style.transform = 'scale(1.1)';
+                errorElem.style.transition = 'all 0.2s ease';
+
+                setTimeout(() => {
+                    errorElem.style.transform = 'scale(1)';
+                    pattern = [];
+                    drawPattern();
+
+                    setTimeout(() => {
+                        errorElem.style.opacity = '0';
+                        setTimeout(() => {
+                            errorElem.innerText = '';
+                            errorElem.style.opacity = '1';
+                        }, 200);
+                    }, 1000);
+                }, 200);
+            }
+        });
+        // Show lock on page load
+        showLock();
+    </script>
 </body>
 
 </html>
