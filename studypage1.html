@@ -14,7 +14,6 @@
   <meta charset="UTF-8" />
   <title>12 Boards Booster by Nayan Gupta</title>
   <style>
-
     /* --- New Attractive Modern Theme (Glassmorphism + Vibrant Gradient + Neumorphism) --- */
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
 
@@ -66,8 +65,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -344,8 +350,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -622,8 +635,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -900,8 +920,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -1178,8 +1205,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -1456,8 +1490,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -1734,8 +1775,15 @@
     }
 
     @keyframes fadeInOwner {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .container {
@@ -1993,12 +2041,17 @@
 <body>
   <!-- Remove Top Bar with Title and Aside Options -->
 
-  <div id="lockOverlay" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
-    <div style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
+  <div id="lockOverlay"
+    style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div
+      style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
       <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
-      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:10px;text-align:center;">This page is locked.<br>Draw the pattern to access.</div>
-      <div style="font-size:1em;color:#fbc2eb;font-weight:600;margin-bottom:10px;text-align:center;">Owner: Nayan Gupta</div>
-      <canvas id='patternCanvas' width='240' height='240' style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
+      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:10px;text-align:center;">This page is
+        locked.<br>Draw the pattern to access.</div>
+      <div style="font-size:1em;color:#fbc2eb;font-weight:600;margin-bottom:10px;text-align:center;">Owner: Nayan Gupta
+      </div>
+      <canvas id='patternCanvas' width='240' height='240'
+        style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
       <div id='lockError' style='color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;'></div>
     </div>
   </div>
@@ -2127,6 +2180,30 @@
           <li>Combination of Capacitors</li>
           <li>Energy Stored in a Capacitor</li>
         </ul>
+        <div class="chapter" onclick="toggleTopics('physics3')">Chapter 3: Current Electricity</div>
+        <ul class="topics" id="physics3">
+          <li><a href="https://drive.google.com/file/d/1O4_l1lUKeILwV7MPwQjyL582JtL2Oftl/view?usp=sharing"
+              target="_blank">Electric Current and Charge Flow</a></li>
+          <li><a href="https://drive.google.com/file/d/1oa7MESGMUMnLPF30-8upPElt78-xZoKM/view?usp=sharing"
+              target="_blank">Mobility</a></li>
+          <li><a href="https://drive.google.com/file/d/1O0EOpj1mSicqNVz_ZtRETRuH_JU4kDVa/view?usp=sharing"
+              target="_blank">Ohm's Law and Resistance</a></li>
+          <li><a href="https://drive.google.com/file/d/1PoXEGqwNl-KNDjuIayt95lNUqw6v7vvs/view?usp=sharing"
+              target="_blank">Vector Form of Ohm Law (2M IMP)</a></li>
+          <li><a href="https://drive.google.com/file/d/10MfGI-gADJ4ueg8wIuU_pYQ9J0bQAcV1/view?usp=sharing"
+              target="_blank">Current in Metallic Conductor</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Combination of Resistors (Series and Parallel)</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Temperature Dependence of Resistance</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Electric Energy and Power</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Internal Resistance of a Cell</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Kirchhoff's Laws</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Wheatstone Bridge</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Meter Bridge</a></li>
+          <li><a href="YOUR_DRIVE_LINK_HERE" target="_blank">Potentiometer and its Applications</a></li>
+          <li><a href="" target="_blank">Examples of 3rd Chapter (Coming Soon)</a></li>
+          <li><a href="" target="_blank">Exercise of 3rd Chapter (Coming Soon)</a></li>
+        </ul>
+
 
         <h2>Chemistry</h2>
         <div class="chapter" onclick="toggleTopics('chemistry1')">Chapter 1: Solutions</div>
@@ -2184,7 +2261,8 @@
           <li><a href="https://drive.google.com/file/d/11ZOh_50H-eS0p61y5ChE-P70xy58D60E/view?usp=sharing"
               target="_blank">Exercise-3</a></li>
           <li><a href="https://drive.google.com/file/d/15hbOzZWOUExBAbU2Wuz__XatUqLwr_2I/view?usp=sharing"
-              target="_blank">Examples 1 to 25</a></li>        </ul>
+              target="_blank">Examples 1 to 25</a></li>
+        </ul>
         <div class="chapter" onclick="toggleTopics('maths4')">Chapter 4: Determinants</div>
         <ul class="topics" id="maths4">
           <li><a href="https://drive.google.com/file/d/1gRj2C8nZ9styTUXhdTicZl7hMWfKCueh/view?usp=sharing"
@@ -2306,7 +2384,7 @@
     const spacing = 90;    // Increased spacing between dots
     const offset = 70;     // Adjusted offset for larger canvas
     let dots = [], pattern = [], isDrawing = false, lastDot = null;
-    const correctPattern = [8,5,3,6,9]; // 85369
+    const correctPattern = [8, 5, 3, 6, 9]; // 85369
 
     // Clear any cached patterns
     sessionStorage.removeItem('patternAttempts');
@@ -2314,15 +2392,15 @@
 
     // Calculate dot positions
     dots = [];
-    for(let y=0;y<grid;y++) for(let x=0;x<grid;x++) dots.push({x:offset+x*spacing, y:offset+y*spacing, n:y*grid+x+1});    function drawPattern(current) {
+    for (let y = 0; y < grid; y++) for (let x = 0; x < grid; x++) dots.push({ x: offset + x * spacing, y: offset + y * spacing, n: y * grid + x + 1 }); function drawPattern(current) {
       ctx.clearRect(0, 0, 320, 320);
-      
+
       // Draw connecting lines with gradient
       if (pattern.length > 0) {
         const gradient = ctx.createLinearGradient(0, 0, 320, 320);
         gradient.addColorStop(0, '#7f53accc');
         gradient.addColorStop(1, '#fbc2ebcc');
-        
+
         ctx.strokeStyle = gradient;
         ctx.lineWidth = 8;
         ctx.lineCap = 'round';
@@ -2330,43 +2408,43 @@
         ctx.shadowColor = '#fbc2eb';
         ctx.shadowBlur = 15;
         ctx.beginPath();
-        
-        for(let i=0; i<pattern.length; i++) {
-          let d = dots.find(dot=>dot.n===pattern[i]);
-          if(i===0) ctx.moveTo(d.x, d.y);
+
+        for (let i = 0; i < pattern.length; i++) {
+          let d = dots.find(dot => dot.n === pattern[i]);
+          if (i === 0) ctx.moveTo(d.x, d.y);
           else ctx.lineTo(d.x, d.y);
         }
-        if(current) ctx.lineTo(current.x, current.y);
+        if (current) ctx.lineTo(current.x, current.y);
         ctx.stroke();
       }
-      
+
       // Draw dots with enhanced styling
-      for(let d of dots) {
+      for (let d of dots) {
         const isSelected = pattern.includes(d.n);
-        
+
         // Outer glow
         ctx.beginPath();
-        ctx.arc(d.x, d.y, dotRadius + 8, 0, 2*Math.PI);
+        ctx.arc(d.x, d.y, dotRadius + 8, 0, 2 * Math.PI);
         ctx.fillStyle = isSelected ? '#fbc2eb33' : '#a6c1ee22';
         ctx.fill();
-        
+
         // Main dot
         ctx.beginPath();
-        ctx.arc(d.x, d.y, dotRadius, 0, 2*Math.PI);
+        ctx.arc(d.x, d.y, dotRadius, 0, 2 * Math.PI);
         ctx.fillStyle = isSelected ? '#7f53ac' : '#ffffff';
         ctx.shadowColor = isSelected ? '#fbc2eb' : '#a6c1ee';
         ctx.shadowBlur = isSelected ? 18 : 12;
         ctx.fill();
-        
+
         // Dot border
         ctx.shadowBlur = 0;
         ctx.lineWidth = 3;
         ctx.strokeStyle = isSelected ? '#fbc2eb' : '#a6c1eeaa';
         ctx.stroke();
-        
+
         // Inner highlight
         ctx.beginPath();
-        ctx.arc(d.x - dotRadius/3, d.y - dotRadius/3, dotRadius/4, 0, 2*Math.PI);
+        ctx.arc(d.x - dotRadius / 3, d.y - dotRadius / 3, dotRadius / 4, 0, 2 * Math.PI);
         ctx.fillStyle = isSelected ? '#fbc2eb44' : '#ffffff88';
         ctx.fill();
       }
@@ -2374,52 +2452,52 @@
 
     drawPattern();
 
-    function getDotAt(x,y) {
+    function getDotAt(x, y) {
       const touchRadius = dotRadius + 15; // Increased touch area
-      for(let d of dots) {
-        if(Math.hypot(d.x-x, d.y-y) < touchRadius && !pattern.includes(d.n)) return d;
+      for (let d of dots) {
+        if (Math.hypot(d.x - x, d.y - y) < touchRadius && !pattern.includes(d.n)) return d;
       }
       return null;
     }
 
-    patternCanvas.addEventListener('pointerdown',e=>{
-      pattern=[]; isDrawing=true; lastDot=null;
-      const rect=patternCanvas.getBoundingClientRect();
-      const d=getDotAt(e.clientX-rect.left,e.clientY-rect.top);
-      if(d) { pattern.push(d.n); lastDot=d; }
+    patternCanvas.addEventListener('pointerdown', e => {
+      pattern = []; isDrawing = true; lastDot = null;
+      const rect = patternCanvas.getBoundingClientRect();
+      const d = getDotAt(e.clientX - rect.left, e.clientY - rect.top);
+      if (d) { pattern.push(d.n); lastDot = d; }
       drawPattern();
     });
-    patternCanvas.addEventListener('pointermove',e=>{
-      if(!isDrawing) return;
-      const rect=patternCanvas.getBoundingClientRect();
-      const d=getDotAt(e.clientX-rect.left,e.clientY-rect.top);
-      if(d && (!lastDot||d.n!==lastDot.n)) { pattern.push(d.n); lastDot=d; }
-      drawPattern(isDrawing ? {x:e.clientX-rect.left,y:e.clientY-rect.top} : null);
-    });    patternCanvas.addEventListener('pointerup', () => {
+    patternCanvas.addEventListener('pointermove', e => {
+      if (!isDrawing) return;
+      const rect = patternCanvas.getBoundingClientRect();
+      const d = getDotAt(e.clientX - rect.left, e.clientY - rect.top);
+      if (d && (!lastDot || d.n !== lastDot.n)) { pattern.push(d.n); lastDot = d; }
+      drawPattern(isDrawing ? { x: e.clientX - rect.left, y: e.clientY - rect.top } : null);
+    }); patternCanvas.addEventListener('pointerup', () => {
       isDrawing = false;
       drawPattern();
-      
-      if (pattern.length === correctPattern.length && pattern.every((v,i) => v === correctPattern[i])) {
+
+      if (pattern.length === correctPattern.length && pattern.every((v, i) => v === correctPattern[i])) {
         // Success animation
         const overlay = lockOverlay.querySelector('div');
         overlay.style.transform = 'scale(0.95)';
         overlay.style.transition = 'all 0.3s ease';
-        
+
         setTimeout(() => {
           overlay.style.transform = 'scale(1.05)';
           setTimeout(() => {
             overlay.style.transform = 'scale(0)';
             overlay.style.opacity = '0';
-            
+
             setTimeout(() => {
               lockOverlay.style.background = 'transparent';
               lockOverlay.style.backdropFilter = 'blur(0)';
-              
+
               setTimeout(() => {
                 lockOverlay.style.display = 'none';
                 document.body.style.overflow = '';
                 document.body.style.pointerEvents = '';
-                
+
                 // Clear cache
                 sessionStorage.clear();
                 localStorage.removeItem('patternLockState');
@@ -2432,10 +2510,10 @@
         // Error animation and feedback
         const errorElem = document.getElementById('lockError');
         const canvas = document.getElementById('patternCanvas');
-        
+
         canvas.style.transform = 'translateX(10px)';
         canvas.style.transition = 'transform 0.1s ease';
-        
+
         setTimeout(() => {
           canvas.style.transform = 'translateX(-8px)';
           setTimeout(() => {
@@ -2448,16 +2526,16 @@
             }, 50);
           }, 50);
         }, 50);
-        
+
         errorElem.innerText = 'Incorrect pattern. Please try again.';
         errorElem.style.transform = 'scale(1.1)';
         errorElem.style.transition = 'all 0.2s ease';
-        
+
         setTimeout(() => {
           errorElem.style.transform = 'scale(1)';
           pattern = [];
           drawPattern();
-          
+
           setTimeout(() => {
             errorElem.style.opacity = '0';
             setTimeout(() => {
@@ -2472,4 +2550,5 @@
     showLock();
   </script>
 </body>
+
 </html>
