@@ -6,60 +6,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>12 Board Booster - Login</title>
   <style>
-    /* Theme styling (updated to pastel/glass theme) */
+    @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
     *, *::before, *::after { box-sizing: border-box; }
     body {
-      margin: 0; min-height: 100vh;
-      font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%, #fbc2eb 100%);
-      color: #232946;
+      background: linear-gradient(120deg, #232526 0%, #2b1a1a 100%);
+      color: #eaffea;
+      font-family: 'Montserrat', 'Nosifer', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      transition: background 0.6s;
+      position: relative;
+      overflow-x: hidden;
+      letter-spacing: 1.5px;
       display: flex; flex-direction: column; align-items: center;
       padding: 40px 20px 70px;
-      overflow-x: hidden; /* Only hide horizontal scroll, allow vertical */
-      position: relative;
-      transition: background 0.6s;
     }
     body::before {
-      content: "";
-      position: fixed; top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background:
-        radial-gradient(2px 2px at 20% 15%, #fbc2eb55, transparent),
-        radial-gradient(1.5px 1.5px at 70% 25%, #7f53ac33, transparent),
-        radial-gradient(1.8px 1.8px at 35% 70%, #e0e7ff33, transparent),
-        radial-gradient(1.7px 1.7px at 85% 80%, #fbc2eb44, transparent),
-        radial-gradient(1.2px 1.2px at 50% 40%, #7f53ac22, transparent);
-      background-repeat: repeat;
-      pointer-events: none; z-index: 0;
-      animation: twinkle 6s infinite alternate ease-in-out;
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+      background-size: 100% 60px, 200px 60px, 300px 60px;
+      background-position: top, top, 0 40px;
+      opacity: 0.7;
+      z-index: 1000;
+      pointer-events: none;
+      filter: blur(2px);
+      animation: mist 3s infinite alternate;
     }
-    @keyframes twinkle { 0% {opacity: 0.8;} 100% {opacity: 1;} }
-
+    @keyframes mist {
+      0% { filter: blur(2px) brightness(1); }
+      100% { filter: blur(3px) brightness(1.08); }
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background: url('https://i.imgur.com/1n6bJkP.png'), url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png'), url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
+      background-size: 400px, auto, cover, 100% 80px, 200px 120px;
+      background-repeat: no-repeat, repeat, no-repeat, repeat-x, no-repeat;
+      background-position: center bottom, center, center, top, 80% 90%;
+      opacity: 0.18;
+      z-index: 1;
+    }
     .container {
       position: relative; z-index: 1;
-      background: rgba(255,255,255,0.85);
+      background: rgba(30, 40, 30, 0.85);
       max-width: 420px; width: 100%;
       padding: 45px 40px 50px;
       border-radius: 18px;
-      box-shadow: 0 8px 32px #7f53ac22, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
+      box-shadow: 0 8px 32px #00ffb022, 0 0 0 #fff0, 0 2px 8px #fff8 inset;
       display: flex; flex-direction: column;
-      color: #232946;
+      color: #eaffea;
       backdrop-filter: blur(10px);
-      border: 2px solid #e0e7ff;
+      border: 2px solid #00ffb0;
     }
     h1 {
-      font-family: 'Orbitron', 'Montserrat', sans-serif;
+      font-family: 'Nosifer', 'Montserrat', Arial, sans-serif;
       font-weight: 900;
       font-size: 2.6rem;
       text-align: center;
       margin-bottom: 8px;
-      color: #7f53ac;
+      color: #ff2e63;
       letter-spacing: 0.12em;
       text-shadow:
-        0 2px 24px #fbc2eb88,
+        0 2px 24px #00ffb088,
         0 1px 0 #fff,
-        0 0 40px #7f53ac99,
-        0 0 80px #fbc2eb77;
+        0 0 40px #ff2e6399,
+        0 0 80px #00ffb077;
+      text-transform: uppercase;
     }
     .owner {
       font-style: italic;
@@ -73,17 +92,23 @@
     .owner-highlight {
       display: block;
       text-align: center;
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin-bottom: 18px;
       color: #fff;
-      background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
-      border-radius: 12px;
-      padding: 6px 22px;
+      background: linear-gradient(90deg, #ff2e63 0%, #00ffb0 100%);
+      border-radius: 14px;
+      padding: 10px 26px;
       font-family: 'Montserrat', cursive, sans-serif;
-      font-weight: 700;
-      letter-spacing: 2px;
-      box-shadow: 0 0 16px #fbc2eb77, 0 0 32px #7f53ac44;
-      text-shadow: 0 0 8px #7f53ac99, 0 0 16px #fbc2eb77;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      box-shadow: 0 0 18px #00ffb0cc, 0 0 32px #ff2e63cc, 0 0 0 6px rgba(0,0,0,0.45);
+      text-shadow: 0 0 16px #000, 0 0 8px #ff2e63cc, 0 0 16px #00ffb0cc, 0 2px 2px #000;
+      position: relative;
+      z-index: 2000;
+      border: 2px solid #fff3;
+      /* Add a semi-transparent overlay for contrast */
+      background-blend-mode: overlay;
+      filter: brightness(1.1) contrast(1.2);
       animation: fadeInOwner 2s, glowPulse 3s infinite alternate;
     }
     @keyframes fadeInOwner {
@@ -91,17 +116,80 @@
       to { opacity: 1; transform: translateY(0); }
     }
     @keyframes glowPulse {
-      0% { text-shadow: 0 0 8px #7f53ac99, 0 0 16px #fbc2eb77; }
-      100% { text-shadow: 0 0 18px #7f53accc, 0 0 36px #fbc2ebbb; }
+      0% { text-shadow: 0 0 8px #ff2e6399, 0 0 16px #00ffb077; }
+      100% { text-shadow: 0 0 18px #ff2e63cc, 0 0 36px #00ffb0bb; }
     }
     label {
-      color: #7f53ac;
+      color: #00ffb0;
       font-weight: 600;
       font-size: 1.05em;
       margin-bottom: 6px;
-      display: block;
-      text-shadow: 0 0 12px #fbc2eb44;
     }
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+      width: 100%;
+      padding: 14px 18px;
+      margin: 8px 0 18px 0;
+      border: 2.5px solid #ff2e63;
+      border-radius: 10px;
+      background: rgba(30, 20, 30, 0.92);
+      color: #00ffb0;
+      font-family: 'Nosifer', 'Montserrat', Arial, sans-serif;
+      font-size: 1.18em;
+      letter-spacing: 2px;
+      outline: none;
+      box-shadow: 0 0 12px #ff2e63cc, 0 0 6px #00ffb099 inset;
+      transition: border 0.3s, box-shadow 0.3s;
+      text-shadow: 0 0 6px #00ffb0cc, 0 2px 2px #000;
+      caret-color: #ff2e63;
+    }
+    input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+      border-color: #00ffb0;
+      box-shadow: 0 0 24px #ff2e63, 0 0 12px #00ffb0;
+      background: rgba(30, 20, 30, 1);
+      color: #ff2e63;
+    }
+    input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="email"]::placeholder, input[type="number"]::placeholder {
+      color: #ff2e63cc;
+      font-family: 'Nosifer', 'Montserrat', Arial, sans-serif;
+      letter-spacing: 2px;
+      opacity: 1;
+      text-shadow: 0 0 6px #00ffb0cc, 0 2px 2px #000;
+    }
+    /* --- HORROR EFFECTS FOR INPUTS --- */
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+      position: relative;
+      font-size: 1.34em;
+      border-width: 3px;
+      border-image: linear-gradient(90deg, #ff2e63 10%, #2b1a1a 60%, #00ffb0 100%) 1;
+      animation: horror-glow 2.5s infinite alternate;
+    }
+    @keyframes horror-glow {
+      0% {
+        box-shadow: 0 0 12px #ff2e63cc, 0 0 6px #00ffb099 inset, 0 0 0 #0000;
+        border-color: #ff2e63;
+      }
+      50% {
+        box-shadow: 0 0 32px #ff2e63cc, 0 0 22px #00ffb0cc inset, 0 8px 24px #000a;
+        border-color: #00ffb0;
+      }
+      100% {
+        box-shadow: 0 0 16px #ff2e63cc, 0 0 12px #00ffb099 inset, 0 16px 48px #2b1a1a99;
+        border-color: #ff2e63;
+      }
+    }
+    /* Simulate dripping blood with a pseudo-element */
+    input[type="text"], input[type="password"] {
+      background: linear-gradient(180deg, rgba(30,20,30,0.92) 90%, #ff2e63 100%);
+      /* Blood drops using box-shadow */
+      box-shadow:
+        0 0 12px #ff2e63cc,
+        0 0 6px #00ffb099 inset,
+        0 8px 0 -2px #ff2e63,
+        10px 14px 0 -8px #ff2e6399,
+        -10px 18px 0 -8px #ff2e6377;
+    }
+    /* END HORROR EFFECTS */
+
     input {
       width: 100%;
       padding: 14px 18px;
@@ -237,6 +325,12 @@
       cursor: pointer;
     }
 
+    .blood-drip {
+      pointer-events: none;
+      user-select: none;
+      z-index: 10;
+      filter: drop-shadow(0 2px 8px #ff2e63cc);
+    }
   </style>
 </head>
 <body>
@@ -245,10 +339,14 @@
     <h1>12 Board Booster</h1>
 
     <label for="username">Username</label>
-    <input type="text" id="username" placeholder="Enter your username" autocomplete="username" />
+    <input type="text" id="username" name="username" placeholder="Username" required autocomplete="username">
+    <!-- SVG Blood Drip for Username -->
+    <svg class="blood-drip" width="100%" height="24" viewBox="0 0 300 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-9px;margin-bottom:12px;"><path d="M0 0 Q10 10 25 0 Q40 10 55 0 Q70 10 85 0 Q100 15 115 0 Q130 10 145 0 Q160 20 175 0 Q190 10 205 0 Q220 12 235 0 Q250 10 265 0 Q280 12 300 0 Q295 24 285 14 Q275 24 265 14 Q255 24 245 14 Q235 24 225 14 Q215 24 205 14 Q195 24 185 14 Q175 24 165 14 Q155 24 145 14 Q135 24 125 14 Q115 24 105 14 Q95 24 85 14 Q75 24 65 14 Q55 24 45 14 Q35 24 25 14 Q15 24 5 14 Q0 24 0 0" fill="#ff2e63" stroke="#b8002e" stroke-width="2"/></svg>
 
     <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" />
+    <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+    <!-- SVG Blood Drip for Password -->
+    <svg class="blood-drip" width="100%" height="24" viewBox="0 0 300 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-9px;margin-bottom:12px;"><path d="M0 0 Q10 10 25 0 Q40 10 55 0 Q70 10 85 0 Q100 15 115 0 Q130 10 145 0 Q160 20 175 0 Q190 10 205 0 Q220 12 235 0 Q250 10 265 0 Q280 12 300 0 Q295 24 285 14 Q275 24 265 14 Q255 24 245 14 Q235 24 225 14 Q215 24 205 14 Q195 24 185 14 Q175 24 165 14 Q155 24 145 14 Q135 24 125 14 Q115 24 105 14 Q95 24 85 14 Q75 24 65 14 Q55 24 45 14 Q35 24 25 14 Q15 24 5 14 Q0 24 0 0" fill="#ff2e63" stroke="#b8002e" stroke-width="2"/></svg>
 
     <button id="loginBtn" type="button" onclick="login()">Login</button>
 

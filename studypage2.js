@@ -63,8 +63,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const correctPattern = [8, 5, 3, 6, 9]; // 85369
 
     // Clear any cached patterns
-    sessionStorage.removeItem('patternAttempts');
-    localStorage.removeItem('patternLockState');
+
 
     // Calculate dot positions
     dots = [];
@@ -176,8 +175,7 @@ window.addEventListener('DOMContentLoaded', function() {
                             document.body.style.pointerEvents = '';
 
                             // Clear cache
-                            sessionStorage.clear();
-                            localStorage.removeItem('patternLockState');
+
                             pattern = [];
                         }, 300);
                     }, 200);
