@@ -20,9 +20,9 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
-  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
-  background-size: 100% 60px, 200px 60px, 300px 60px;
-  background-position: top, top, 0 40px;
+  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+  background-size: 100% 60px, 300px 60px;
+  background-position: top, 0 40px;
   opacity: 0.7;
   z-index: 1000;
   pointer-events: none;
@@ -35,10 +35,10 @@ body::after {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  background: url('https://i.imgur.com/1n6bJkP.png'), url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png'), url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
-  background-size: 400px, auto, cover, 100% 80px, 200px 120px;
-  background-repeat: no-repeat, repeat, no-repeat, repeat-x, no-repeat;
-  background-position: center bottom, center, center, top, 80% 90%;
+  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png'), url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
+  background-size: auto, cover, 100% 80px, 200px 120px;
+  background-repeat: repeat, no-repeat, repeat-x, no-repeat;
+  background-position: center, center, top, 80% 90%;
   opacity: 0.18;
   z-index: 1;
 }
@@ -79,9 +79,9 @@ header::after {
   display: block;
   width: 100%;
   height: 30px;
-  background: url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
-  background-size: contain, 100% 30px;
-  background-position: left bottom, left top;
+  background: url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+  background-size: 100% 30px;
+  background-position: left top;
   opacity: 0.8;
   pointer-events: none;
 }
@@ -217,8 +217,7 @@ aside p.quote {
   top: 50%;
   width: 18px;
   height: 36px;
-  background: url('https://i.imgur.com/8Q2Qy7F.png') no-repeat left center;
-  background-size: contain;
+  /* Removed imgur.com url, fallback to no background image */
   opacity: 0.7;
   transform: translateY(-50%) rotate(-8deg);
   pointer-events: none;
@@ -403,13 +402,13 @@ footer::after {
 #lockOverlay {
   background: rgba(30,40,30,0.98) !important;
   z-index: 2000;
-  /* Patterned horror overlay for lock screen - ensure exact match with studypage1.css */
   background-image:
-    url('https://i.imgur.com/1n6bJkP.png'),
     url('https://www.transparenttextures.com/patterns/foggy-birds.png'),
-    linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%);
-  background-size: 400px, auto, cover;
-  background-repeat: no-repeat, repeat, no-repeat;
-  background-position: center bottom, center, center;
+    linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%),
+    url('https://pngimg.com/uploads/blood/blood_PNG6136.png'),
+    url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
+  background-size: auto, cover, 100% 80px, 200px 120px;
+  background-repeat: repeat, no-repeat, repeat-x, no-repeat;
+  background-position: center, center, top, 80% 90%;
   opacity: 0.98;
 }
