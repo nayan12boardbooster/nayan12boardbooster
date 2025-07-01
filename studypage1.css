@@ -20,7 +20,7 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
-  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
   background-size: 100% 60px, 200px 60px, 300px 60px;
   background-position: top, top, 0 40px;
   opacity: 0.7;
@@ -35,7 +35,7 @@ body::after {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
-  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png'), url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
+  background: url('https://i.imgur.com/1n6bJkP.png'), url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png'), url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
   background-size: 400px, auto, cover, 100% 80px, 200px 120px;
   background-repeat: no-repeat, repeat, no-repeat, repeat-x, no-repeat;
   background-position: center bottom, center, center, top, 80% 90%;
@@ -79,7 +79,7 @@ header::after {
   display: block;
   width: 100%;
   height: 30px;
-  background: url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+  background: url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
   background-size: contain, 100% 30px;
   background-position: left bottom, left top;
   opacity: 0.8;
@@ -197,7 +197,8 @@ aside p.quote {
   color: #b6ffb6;
   box-shadow: 0 2px 16px #00ffb088, 0 1px 8px #fff8 inset;
   user-select: none;
-  font-size: 1.12em;  font-weight: 700;
+  font-size: 1.12em;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: capitalize;
   border: 2px solid #00ffb0;
@@ -216,7 +217,7 @@ aside p.quote {
   top: 50%;
   width: 18px;
   height: 36px;
-  background: none;
+  background: url('https://i.imgur.com/8Q2Qy7F.png') no-repeat left center;
   background-size: contain;
   opacity: 0.7;
   transform: translateY(-50%) rotate(-8deg);
@@ -385,7 +386,7 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
-  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
+  background: linear-gradient(180deg, #00ffb0 80%, transparent 100%), url('https://i.imgur.com/8Q2Qy7F.png') repeat-x, url('https://pngimg.com/uploads/blood/blood_PNG6136.png') repeat-x;
   background-size: 100% 60px, 200px 60px, 300px 60px;
   background-position: top, top, 0 40px;
   opacity: 0.7;
@@ -455,11 +456,19 @@ header, .subject h2, .chapter, .topics li, .topics a, footer, p, #nextpage a {
 }
 
 #lockOverlay {
-  background: rgba(20,10,20,0.70) !important;
-  z-index: 3000 !important;
-  backdrop-filter: blur(3px) !important;
-  box-shadow: 0 0 80px 16px #000a;
-  border: 2.5px solid #ff2e63 !important;
+  background: rgba(30,40,30,0.98) !important;
+  z-index: 2000;
+  /* Patterned horror overlay for lock screen */
+  background-image:
+    url('https://i.imgur.com/1n6bJkP.png'),
+    url('https://www.transparenttextures.com/patterns/foggy-birds.png'),
+    linear-gradient(120deg, rgba(0,255,128,0.04) 0%, rgba(0,0,0,0.7) 100%),
+    url('https://pngimg.com/uploads/blood/blood_PNG6136.png'),
+    url('https://pngimg.com/uploads/ghost/ghost_PNG27.png');
+  background-size: 400px, auto, cover, 100% 80px, 200px 120px;
+  background-repeat: no-repeat, repeat, no-repeat, repeat-x, no-repeat;
+  background-position: center bottom, center, center, top, 80% 90%;
+  opacity: 0.98;
 }
 
 #lockOverlay > div {
@@ -554,7 +563,7 @@ header, .subject h2, .chapter, .topics li, .topics a, footer, p, #nextpage a {
   top: 0; left: 0; width: 100vw; height: 100vh;
   pointer-events: none;
   z-index: 1003;
-  background:  repeat-x top center;
+  background: url('https://i.imgur.com/8Q2Qy7F.png') repeat-x top center;
   background-size: contain;
   opacity: 0.12;
   animation: blood-drip 8s infinite linear;

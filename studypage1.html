@@ -13,45 +13,191 @@
   </script>
   <meta charset="UTF-8" />
   <link rel="icon" href="images.jpg" type="image/jpeg">
-  <title>12 Boards Booster by Nayan Gupta</title>
+  <title>12 Boards Booster - Ghost Edition</title>
   <link rel="stylesheet" href="studypage1.css">
+  <style>
+    body {
+      background: linear-gradient(120deg, #232526 0%, #1a1a2e 100%);
+      color: #eaffea;
+      font-family: 'Montserrat', 'Nosifer', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      letter-spacing: 1.5px;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'), linear-gradient(120deg, rgba(0, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.8) 100%);
+      background-size: 400px, auto;
+      background-repeat: repeat, no-repeat;
+      background-position: center, center;
+      opacity: 0.18;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .ghost-float {
+      position: fixed;
+      z-index: 1002;
+      font-size: 3.5em;
+      pointer-events: none;
+      animation: ghostFloat 7s infinite linear;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 12px #fff) drop-shadow(0 0 24px #00fff0);
+    }
+
+    .ghost-float.ghost1 {
+      left: 8vw;
+      top: 18vh;
+      animation-delay: 0s;
+    }
+
+    .ghost-float.ghost2 {
+      left: 80vw;
+      top: 22vh;
+      animation-delay: 2s;
+    }
+
+    .ghost-float.ghost3 {
+      left: 40vw;
+      top: 70vh;
+      animation-delay: 4s;
+    }
+
+    @keyframes ghostFloat {
+      0% {
+        transform: translateY(0) scale(1) rotate(-5deg);
+        opacity: 0.7;
+      }
+
+      20% {
+        transform: translateY(-20px) scale(1.05) rotate(5deg);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(20px) scale(0.98) rotate(-3deg);
+        opacity: 0.8;
+      }
+
+      80% {
+        transform: translateY(-10px) scale(1.02) rotate(3deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0) scale(1) rotate(-5deg);
+        opacity: 0.7;
+      }
+    }
+
+    header {
+      background: rgba(30, 40, 60, 0.92);
+      padding: 32px 0 22px 0;
+      text-align: center;
+      font-size: 2.8em;
+      color: #00fff0;
+      font-family: 'Nosifer', 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      border-bottom: 4px solid #00fff0;
+      box-shadow: 0 0 24px #00fff0cc, 0 0 48px #00fff0aa;
+      backdrop-filter: blur(8px);
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 18px;
+      text-shadow: 0 0 8px #00fff0, 0 2px 8px #00fff044, 0 1px 0 #fff;
+      position: relative;
+      animation: flicker 2.5s infinite alternate;
+    }
+
+    header::before {
+      content: '\1F47B\1F47B\1F47B';
+      /* ghost emojis */
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      font-size: 1.2em;
+      z-index: 2;
+      filter: drop-shadow(0 0 8px #00fff0);
+    }
+
+    .ghost-author-box {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 18px auto;
+      padding: 16px 0 12px 0;
+      background: linear-gradient(90deg, #00fff0 80%, #232526 100%);
+      color: #fff;
+      font-family: 'Nosifer', 'Montserrat', Arial, sans-serif;
+      font-size: 1.5em;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-align: center;
+      border-radius: 18px 18px 32px 32px;
+      box-shadow: 0 0 24px #00fff0cc, 0 0 48px #00fff0aa;
+      border: 3px solid #00fff0;
+      text-shadow: 0 0 8px #fff, 0 0 16px #00fff0, 0 2px 8px #232526;
+      opacity: 0;
+      transform: translateY(-60px);
+      animation: slideDownGhost 1.2s cubic-bezier(.77, 0, .18, 1) 0.3s forwards;
+      position: relative;
+      z-index: 1200;
+    }
+
+    @keyframes slideDownGhost {
+      0% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.95) skewX(-8deg);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.05) skewX(2deg);
+      }
+
+      80% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01) skewX(-2deg);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) skewX(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Remove Top Bar with Title and Aside Options -->
-
-  <div id="lockOverlay"
-    style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(13,27,42,0.97);z-index:2000;display:flex;align-items:center;justify-content:center;flex-direction:column;">
-    <div
-      style="background:linear-gradient(145deg,#131b2a,#0c1421);border-radius:18px;box-shadow:0 0 25px 4px #2f3a68;padding:36px 32px 28px;max-width:350px;width:90%;color:#ccd6f6;display:flex;flex-direction:column;align-items:center;">
-      <div style="font-size:2.5em;margin-bottom:18px;">🔒</div>
-      <div style="font-size:1.1rem;color:#8db1ff;font-weight:700;margin-bottom:10px;text-align:center;">This page is
-        locked.<br>Draw the pattern to access.</div>
-      <div style="font-size:1em;color:#fbc2eb;font-weight:600;margin-bottom:10px;text-align:center;">Owner: Nayan Gupta
-      </div>
-      <canvas id='patternCanvas' width='240' height='240'
-        style='background:#202d59;border-radius:16px;box-shadow:0 0 18px #2f3a68;margin-bottom:18px;touch-action:none;'></canvas>
-      <div id='lockError' style='color:#ff9e9e;font-size:0.98rem;min-height:22px;margin-bottom:10px;'></div>
-    </div>
-  </div>
-
+  <span class="ghost-float ghost1">👻</span>
+  <span class="ghost-float ghost2">👻</span>
+  <span class="ghost-float ghost3">👻</span>
+  <div class="ghost-author-box">👻 Made by Nayan Gupta 👻</div>
   <header>12 Boards Booster
     <span class="header-owner">by Nayan Gupta</span>
     <span style="
       display: block;
       font-size: 0.38em;
       color: #fff;
-      background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+      background: linear-gradient(90deg, #00fff0 0%, #232526 100%);
       border-radius: 12px;
       padding: 4px 18px;
       margin: 12px auto 0 auto;
       font-family: 'Montserrat', cursive, sans-serif;
       font-weight: 700;
       letter-spacing: 2.5px;
-      box-shadow: 0 0 16px #fbc2eb77, 0 0 32px #7f53ac44;
-      text-shadow: 0 0 8px #7f53ac99, 0 0 16px #fbc2eb77;
+      box-shadow: 0 0 16px #00fff077, 0 0 32px #00fff044;
+      text-shadow: 0 0 8px #00fff099, 0 0 16px #00fff077;
       animation: fadeInOwner 2s;
-    ">Learning together, growing together! 📚✨</span>
+    ">Haunted by Knowledge! 👻📚</span>
   </header>
   <!-- Music and Quote (Bottom Right) -->
   <div id="musicBox" style="
@@ -62,9 +208,9 @@
   text-align: right;
   font-style: italic;
   font-size: 0.9rem;
-  color: #87cefa;
+  color: #00fff0;
   pointer-events: auto;
-  text-shadow: 0 0 5px #00ffff;
+  text-shadow: 0 0 5px #00fff0;
 ">
 
     <audio id="bgMusic" autoplay loop>
@@ -74,13 +220,13 @@
 
     <button onclick="toggleMusic()" id="musicBtn" style="
     padding: 6px 14px;
-    background-color: #00bfff;
+    background-color: #00fff0;
     border: none;
     border-radius: 8px;
-    color: white;
+    color: #232526;
     font-size: 0.85rem;
     cursor: pointer;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+    box-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0;
     text-shadow: 0 0 3px #fff;
   ">
       🔊 Pause Music
