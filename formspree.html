@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Nayan Gupta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #232526 0%, #2b1a1a 100%);
+      color: #eaffea;
+      font-family: 'Montserrat', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .form-box {
+      background: rgba(30, 40, 30, 0.92);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px #00ffb022;
+      padding: 40px 32px 32px 32px;
+      max-width: 400px;
+      width: 90vw;
+      text-align: center;
+      border: 2px solid #00ffb0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      color: #ff2e63;
+      margin-bottom: 18px;
+      font-size: 2em;
+      letter-spacing: 2px;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1.5px solid #00ffb0;
+      font-size: 1em;
+      outline: none;
+      background: #232526;
+      color: #eaffea;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .send-btn {
+      background: linear-gradient(90deg, #00ffb0 0%, #00e6a0 100%);
+      color: #232526;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 1.08em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0 22px #00ffb044,0 0 36px #00e6a033;
+      width: 100%;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .send-btn:hover {
+      background: linear-gradient(90deg, #00e6a0 0%, #00ffb0 100%);
+      transform: translateY(-2px);
+    }
+    .success-message {
+      color: #00ffb0;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 1.08em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h1>Email Nayan Gupta</h1>
+    <form action="https://formspree.io/f/xjkrzboj" method="POST" id="contactForm">
+      <input type="text" name="name" required placeholder="Your Name" required>
+      <input type="email" name="email" required placeholder="Your Email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Please enter a valid Gmail address ending with @gmail.com">
+      <textarea name="message" required placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="send-btn">Send Message</button>
+      <div class="success-message" id="successMsg">Thank you! Your message has been sent.</div>
+    </form>
+  </div>
+  <script>
+    // Optional: Show a success message after submit (Formspree will redirect by default)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      setTimeout(function() {
+        document.getElementById('successMsg').style.display = 'block';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
