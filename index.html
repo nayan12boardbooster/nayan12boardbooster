@@ -354,6 +354,35 @@
       document.getElementById('howToLoginBtn').onclick = function() {
         window.location.href = 'contact-nayan.html';
       };
+      // Track login to Google Sheets after successful login
+      function trackLoginToSheet(username) {
+        fetch('https://script.google.com/macros/s/AKfycby373_Tuk2tzn771MnUGIVQ0fGIH0qPGBAiHai3nta300hr7p5QEcdZQ_JCv9xXP3DI/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: username, loginTime: new Date().toISOString() })
+        });
+      }
+      // Patch login() to call trackLoginToSheet on success
+      const origLogin = window.login;
+      window.login = function() {
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const messageDiv = document.getElementById('message');
+        if (!usernameInput || !passwordInput || !messageDiv) {
+          alert('Login form elements not found!');
+          return;
+        }
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        // Call the original login logic
+        if (typeof origLogin === 'function') origLogin();
+        // If login is successful, track login (success is shown by green color)
+        setTimeout(function() {
+          if (messageDiv.style.color === 'rgb(40, 167, 69)' || messageDiv.style.color === '#28a745') {
+            trackLoginToSheet(username);
+          }
+        }, 300);
+      };
     </script>
 
   </div>
