@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Nayan Gupta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #232526 0%, #2b1a1a 100%);
+      color: #eaffea;
+      font-family: 'Montserrat', Arial, sans-serif;
+      overflow: hidden;
+    }
+    .contact-box {
+      background: rgba(30, 40, 30, 0.92);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px #00ffb022;
+      padding: 40px 32px 32px 32px;
+      max-width: 400px;
+      width: 90vw;
+      text-align: center;
+      border: 2px solid #00ffb0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      color: #ff2e63;
+      margin-bottom: 18px;
+      font-size: 2em;
+      letter-spacing: 2px;
+    }
+    .contact-info {
+      font-size: 1.1em;
+      margin-bottom: 18px;
+      color: #eaffea;
+    }
+    .contact-btn {
+      background: linear-gradient(90deg, #7f53ac 0%, #fbc2eb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 32px;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 0 22px #fbc2eb44, 0 0 36px #7f53ac33;
+      margin-top: 18px;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .contact-btn:hover {
+      background: linear-gradient(90deg, #fbc2eb 0%, #7f53ac 100%);
+      transform: translateY(-2px);
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1.5px solid #00ffb0;
+      font-size: 1em;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-box">
+    <h1>Contact Nayan Gupta</h1>
+    <div class="contact-info">
+      Please contact Nayan Gupta to get your login username and password.<br><br>
+    </div>
+    <a href="formspree.html" class="contact-btn" style="margin-top:10px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;">
+      Email Nayan Gupta
+      <span style="font-size:1.25em;vertical-align:middle;">&#128231;</span>
+    </a>
+    <a href="https://t.me/guptanayan312" class="contact-btn" style="margin-top:10px;width:100%;background:linear-gradient(90deg,#229ED9 0%,#00ffb0 100%);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;" target="_blank">
+      Message on Telegram
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" style="width:1.25em;height:1.25em;vertical-align:middle;filter:invert(1);margin-left:2px;" />
+    </a>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
