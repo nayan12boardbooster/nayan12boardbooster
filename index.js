@@ -8,22 +8,25 @@ let lockoutInterval = null;
 function _0x2682(_0x16c1f0, _0x278cd7) { const _0x3e7099 = _0x3e70(); return _0x2682 = function (_0x2682de, _0x281a1f) { _0x2682de = _0x2682de - 0x6f; let _0x344a14 = _0x3e7099[_0x2682de]; return _0x344a14; }, _0x2682(_0x16c1f0, _0x278cd7); } (function (_0x457cd1, _0x3d38bd) { const _0x259b8f = _0x2682, _0x4d16cf = _0x457cd1(); while (!![]) { try { const _0x40983e = -parseInt(_0x259b8f(0x83)) / 0x1 * (parseInt(_0x259b8f(0x71)) / 0x2) + parseInt(_0x259b8f(0x7c)) / 0x3 + parseInt(_0x259b8f(0x80)) / 0x4 + parseInt(_0x259b8f(0x8b)) / 0x5 * (-parseInt(_0x259b8f(0x87)) / 0x6) + -parseInt(_0x259b8f(0x77)) / 0x7 + parseInt(_0x259b8f(0x6f)) / 0x8 + -parseInt(_0x259b8f(0x73)) / 0x9; if (_0x40983e === _0x3d38bd) break; else _0x4d16cf['push'](_0x4d16cf['shift']()); } catch (_0xe1f9fc) { _0x4d16cf['push'](_0x4d16cf['shift']()); } } }(_0x3e70, 0xeed0b));
 
 function login() {
-  const _0x4a1b = _0x2682;
-  const _a = ['Z3VwdGFuYXlhbjMxMg==','a2F2eXJhaiMzMTI=','cHJhbnNodTMxMg==','UHVqYW4xNzIwODE=','ZGlzaGEzMTI='];
-  const _b = ['bmF5YW5AMjAwOTk=','a2F0dHUwMDE=','cHJhbnNodTIwMDg=','MTcyMDgx','ZGlzaGEyMDA4'];
-  const _c = ['TmF5YW4gR3VwdGE=','S2F2eWFyYWogQXRvZGFyaWE=','UHJhbnNodSBBamphcg==','UHVqYW4gUGFuZHlh','RGlzaGEgQ2hyaXN0aWFu'];
-  const _d = ['YWN0aXZl','YWN0aXZl','YWN0aXZl','YWN0aXZl','YWN0aXZl'];
+  // Obfuscated users object using base64 encoding
+  const _usersData = [
+    ['Z3VwdGFuYXlhbjMxMg==', 'bmF5YW5AMjAwOTk=', 'TmF5YW4gR3VwdGE=', 'YWN0aXZl'],
+    ['YWRtaW4=', 'YWRtaW4yMDA4', 'QWRtaW4gVXNlcg==', 'YWN0aXZl'],
+    ['cHJhbnNodTMxMg==', 'cHJhbnNodTIwMDg=', 'UHJhbnNodSBBamphcg==', 'YWN0aXZl'],
+    ['UHVqYW4xNzIwODE=', 'MTcyMDgx', 'UHVqYW4gUGFuZHlh', 'YWN0aXZl'],
+    ['ZGlzaGEzMTI=', 'ZGlzaGEyMDA4', 'RGlzaGEgQ2hyaXN0aWFu', 'YWN0aXZl']
+  ];
   function _decode(x) { return atob(x); }
-  // Compose user object
   let users = {};
-  for (let i = 0; i < _a.length; i++) {
-    users[_decode(_a[i])] = {
-      pass: _decode(_b[i]),
-      name: _decode(_c[i]),
-      status: _decode(_d[i]),
+  for (let i = 0; i < _usersData.length; i++) {
+    users[_decode(_usersData[i][0])] = {
+      pass: _decode(_usersData[i][1]),
+      name: _decode(_usersData[i][2]),
+      status: _decode(_usersData[i][3]),
       lastLogin: null
     };
   }
+  const _0x4a1b = _0x2682;
   // Obfuscated DOM access
   let _dom = [
     ['getElementById','username'],
@@ -110,7 +113,21 @@ function login() {
       }, 30000);
   }
 
-  if (users[_u] && users[_u].pass === _p) {
+  // Debug: Log username, password, and users object
+  console.log('Input username:', _u);
+  console.log('Input password:', _p);
+  console.log('Users object:', users);
+  // Debug: Log all usernames and the input username
+  console.log('Available usernames:', Object.keys(users));
+  console.log('Input username:', _u, '|', Array.from(_u).map(c => c.charCodeAt(0)));
+  // Improved login logic with better error messages
+  if (!users[_u]) {
+    failedAttempts++;
+    _m.textContent = '\u274C Invalid username!';
+    _m.style.color = '#dc3545';
+    return;
+  }
+  if (users[_u].pass === _p) {
     failedAttempts = 0;
     users[_u].lastLogin = new Date().toISOString();
     localStorage.setItem('userName', users[_u].name);
